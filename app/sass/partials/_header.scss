@@ -1,0 +1,465 @@
+
+.site-header{
+    padding-top: 18px;
+    @include tablet{
+        padding-top: 20px;
+    }
+    .logo{
+        float: left;
+        margin: 0 5px 18px;
+        width: 150px;
+        @include tablet {
+            margin: 0 5px 20px;
+            width: 225px;
+        }
+    }
+    .meta-info{
+        float: right;
+        text-align: right;
+        font-size: 12px;
+        @include tablet {
+            width: 370px;
+        }
+    }
+    .where-to-buy{
+        float: left;
+    }
+
+    .language{
+        position: relative;
+        margin-right: 50px;
+        @include tablet{
+            margin-right: 0;
+        }
+        #lang_sel{
+
+        }
+        img{
+            width: 18px;
+        }
+        li{
+            display: inline-block;
+            margin: 0 2px 0 8px;
+            a{
+                color: #42403a;
+            }
+            .lang_sel_sel{
+                display: block;
+                width: 34px;
+                height: 34px;
+                text-decoration: none;
+                img{
+                    width: 34px;
+                }
+                .icl_lang_sel_current{
+                    display: none;
+                }
+                @include tablet{
+                    display: inline;
+                    width: auto;
+                    height: auto;
+                    img{
+                        width: 18px;
+                    }
+                    .icl_lang_sel_current{
+                        display: inline;
+                    }
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .open ~ ul{
+                display: inline-block;
+            }
+            ul{
+                display: none;
+                position: absolute;
+                right: 5px;
+                top: 22px;
+                margin: 15px 0;
+                width: 120px;
+                @include tablet{
+                    width: auto;
+                    margin: 8px 0;
+                    display: inline-block;
+                    position: static;
+                }
+            }
+        }
+    }
+
+
+
+    .site-menu{
+        background-color: #529722;
+        //@include background-image(linear-gradient(#635043, #746055 42%, #877267 43%, #6b5a4f 100%));
+        .container{
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            @include clearfix;
+        }
+        .bar{
+            width: 100%;
+            height: 8px;
+            background-color: $color-yellow;
+            @include desktop{
+                height: 14px;
+            }
+        }
+
+        .toggle-main-menu{
+            width: 52px;
+            height: 37px;
+            padding: 5px 10px;
+            position: absolute;
+            right: 10px;
+            top: -50px;
+            span{
+                float: right;
+                height: 4px;
+                margin: 2px 0 3px;
+                background-color: black;
+                @include border-radius(1px);
+                width: 80%;
+                &:nth-child(2){
+                    width: 50%;
+                }
+            }
+            @include desktop{
+                display: none;
+            }
+
+            &.open {
+                span{
+                    &:nth-child(1){
+                        @include transform(rotate(43deg) translate(6px, 6px));
+                    }
+                    &:nth-child(2){
+                        width: 0;
+                    }
+                    &:nth-child(3){
+                        @include transform(rotate(-47deg));
+                    }
+                }
+                ~ .main-menu-wrap .main-menu {
+                    padding: 10px;
+                    @include border-radius(0 0 20px 20px);
+                    > .menu-item {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .main-menu-wrap{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 200;
+            margin-top: 8px;
+            padding: 0 10px;
+            @include desktop{
+                position: static;
+                margin-top: 0;
+                padding: 0;
+            }
+        }
+
+        .main-menu{
+            @include clearfix;
+
+            background-color: #988675;
+            @include desktop{
+                background-color: transparent;
+            }
+
+            > .menu-item{
+                display: none;
+                position: relative;
+                padding: 6px 5px;
+                font-size: 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                &:first-child{
+                    border-top: none;
+                }
+                @include desktop{
+                    font-size: 15px;
+                    float: left;
+                    display: block;
+                    padding: 13px 10px 11px;
+                    border-top: none;
+                }
+                > a{
+                    display: block;
+                    text-transform: uppercase;
+                    height: 30px;
+                    line-height: 30px;
+                    color: white;
+                    padding: 0 12px;
+                    @include border-radius(10px);
+
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+
+                &:hover {
+                    .sub-menu {
+                        @include opacity(1);
+                        height: auto;
+                        padding: 10px;
+                    }
+                }
+                .sub-menu{
+                    font-weight: 400;
+                    height: 0;
+                    overflow: hidden;
+                    @include border-radius(0 0 10px 10px);
+                    @include transition(all 0.3s);
+
+                    @include desktop{
+                        z-index: 1000;
+                        position: absolute;
+                        left: 0;
+                        top: 100%;
+                        height: 0;
+                        overflow: hidden;
+                        @include opacity(0);
+                        background-color: #988675;
+                        width: 283px;
+                    }
+
+                    li{
+                        border-top: 1px solid rgba(255,255,255,0.3);
+                        &:first-child{
+                            border-top: none;
+                        }
+                        &:hover, &:hover + li{
+                            border-top-color: transparent;
+                        }
+                    }
+                    a{
+                        display: block;
+                        padding: 10px;
+                        @include border-radius(10px);
+                        color: #fff;
+                        &:hover{
+                            background-color: rgba(255,255,255,0.2);
+                            text-decoration: none;
+                        }
+                    }
+                }
+                &:hover > a, &.current-menu-item > a, &.current-menu-ancestor > a{
+                    @include desktop {
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            margin-left: -10px;
+
+                            width: 0;
+                            height: 0;
+                            border-left: 10px solid transparent;
+                            border-right: 10px solid transparent;
+
+                            border-bottom: 10px solid white;
+                        }
+                    }
+                }
+            }
+
+            .menu-item-has-children{
+                &:before{
+                    content: "\f054";
+                    font: $font-awesome;
+                    color: white;
+
+                    position: absolute;
+                    right: 10px;
+                    top: 13px;
+                    @include desktop{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    &:before {
+                        content: "\f078";
+                    }
+                }
+            }
+        }
+
+    }
+
+    .slogan{
+        color: #33485d;
+        @include clearfix;
+        padding: 12px;
+        .h1{
+            float: left;
+            font-size: 18px;
+            font-family: $font-bold;
+            margin: 4px 5px;
+            span{
+                font-size: 15px;
+            }
+        }
+        .connect{
+            text-align: right;
+            font-size: 14px;
+            color: #5f7080;
+            .sn{
+                line-height: 32px;
+                a{
+                    display: inline-block;
+                    margin: 0 0 0 5px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    @include border-radius(23px);
+                    color: white;
+                }
+                .sn--tw{
+                    background-color: #64a7f5;
+                }
+                .sn--fb{
+                    background-color: #3b5999;
+                }
+                .sn--in{
+                    background-color: #d0011b;
+                }
+            }
+        }
+    }
+
+    .submenu{
+        display: none;
+        @include box-shadow(0 10px 20px -10px rgba(0, 0, 0, 0.2));
+    }
+    .menu-link{
+        @include clearfix;
+        > li{
+            float: left;
+            width: 130px;
+            margin-left: 30px;
+            padding: 25px 0;
+            h4{
+                display: table-cell;
+                margin: 0;
+                font-size: 15px;
+                height: 40px;
+                vertical-align: middle;
+                color: #2f363c;
+            }
+
+            figure{
+                margin-top: 12px;
+            }
+        }
+        .links{
+            width: 300px;
+            margin-left: 6px;
+            li{
+                border-top: 1px solid #f7f7f7;
+                &:first-child{
+                    border-top: none;
+                    margin-top: 10px;
+                }
+            }
+            h3{
+                text-transform: uppercase;
+                font-size: 16px;
+                margin: 0;
+                color: #2f363c;
+            }
+            a{
+                display: block;
+                padding: 10px;
+                color: #354a5f;
+                &:hover{
+                    background-color: #e5f3dc;
+                    text-decoration: none;
+                }
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+
+
+.blue-template{
+    .site-menu {
+        background: #BBDAFC;
+        .bar {
+            background-color: $color-blue;
+        }
+
+        .main-menu {
+            background-color: #BBDAFC;
+            > .menu-item {
+                &:hover {
+                    background-color: #96C5EF;
+                }
+                > a {
+                    color: #0057ae;
+                    &.active, &:hover {
+                        color: #01529c;
+                    }
+                }
+                .sub-menu{
+                    @include desktop {
+                        background-color: #BBDAFC;
+                    }
+                    a{
+                        color:#0057ae;
+                    }
+                }
+            }
+            .yellow-label {
+                .sub-menu{
+                    background-color: $color-yellow;
+                    a{
+                        color: #564e44;
+                    }
+                }
+            }
+
+            .blue-label {
+                a {
+                    color: white;
+                    &:hover {
+                        color: white;
+                    }
+                }
+                .sub-menu{
+                    background-color: $color-blue;
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.lang-vi{
+    .site-header .site-menu .main-menu {
+        > .menu-item {
+            padding: 6px 0;
+            @include desktop {
+                padding: 12px 5px;
+            }
+        }
+        .blue-label{
+            left: 130px;
+        }
+    }
+}

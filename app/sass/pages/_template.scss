@@ -1,0 +1,21 @@
+.row{
+    .container{
+        @extend .clearfix;
+    }
+
+    .column-left{
+        float: left;
+        width: 50%;
+        .body{
+            padding-right: 20px;
+        }
+    }
+
+    .column-right{
+        float: right;
+        width: 50%;
+        .body{
+            padding-left: 20px;
+        }
+    }
+}

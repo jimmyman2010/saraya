@@ -1,0 +1,15 @@
+{
+  "name": "Dickinsons",
+  "description": "Graphic design and online marketing consulting",
+  "main": "",
+  "authors": [
+    "Man Tran <minhman.tran@ogilvy.com>"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "magnific-popup": "1.1.0",
+    "malihu-custom-scrollbar-plugin": "3.1.5",
+    "jquery-validation": "1.15.1",
+    "components-font-awesome": "^4.6.3"
+  }
+}

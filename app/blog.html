@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include src="inc/meta.html">Blog</include>
+</head>
+<body>
+<div class="site-container">
+    <include src="inc/header.html"></include>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="site-title">
+                <ul class="breadcrumbs">
+                    <li><span class="divider">&raquo;</span><a href="/">Home</a></li>
+                    <li><span class="divider">&raquo;</span><span>Blog</span></li>
+                </ul>
+                <h1 class="title"><span>Blog</span></h1>
+            </div>
+            <div class="main-container clearfix">
+
+                <section class="blog-content" role="main">
+                    <include src="inc/blog-item-thumb.html"></include>
+                    <include src="inc/blog-item.html"></include>
+                    <include src="inc/blog-item.html"></include>
+                    <include src="inc/blog-item-thumb.html"></include>
+                    <include src="inc/blog-item.html"></include>
+
+                    <nav class="navigation pagination" role="navigation">
+                        <h2 class="screen-reader-text">Posts navigation</h2>
+                        <div class="nav-links">
+                            <a class="prev page-numbers" href="http://dickinsons.dev/blog/page/2/">&laquo; previous</a>
+                            <span class="page-numbers current">1</span>
+                            <a class="page-numbers" href="http://dickinsons.dev/blog/page/2/">2</a>
+                            <a class="next page-numbers" href="http://dickinsons.dev/blog/page/2/">next &raquo;</a>
+                        </div>
+                    </nav>
+                </section>
+
+                <aside class="left-rail" role="complementary">
+
+                    <include src="inc/left-rail.html"></include>
+
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <include src="inc/footer.html"></include>
+</div>
+
+<include src="inc/scripts.html"></include>
+
+</body>
+</html>

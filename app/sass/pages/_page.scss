@@ -1,0 +1,142 @@
+
+.site-main{
+    min-height: 400px;
+}
+
+.site-title {
+    position: relative;
+    padding: 15px 0 0;
+    @include tablet{
+        padding-bottom: 40px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #f7e181;
+        @include box-shadow(0 1px 0 #f2d044);
+        img{
+            display: none;
+        }
+    }
+    .breadcrumbs {
+        font-size: 14px;
+        li {
+            display: inline-block;
+            &:first-child {
+                .divider {
+                    display: none;
+                }
+            }
+            &:last-child{
+                display: none;
+                @include desktop{
+                    display: inline-block;
+                }
+            }
+            .divider {
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .title {
+        font-family: $font-monarcha;
+        @include transform(skew(-2deg));
+        color: #063f78;
+        text-align: center;
+        font-size: 28px;
+        line-height: 1;
+        margin: 20px 0 0;
+
+        @include tablet{
+            font-size: 34px;
+            margin: 0;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            span{
+                display: inline-block;
+                padding: 0 16px;
+                background-color: white;
+            }
+        }
+    }
+}
+
+.home .site-title{
+    display: none;
+}
+
+.pagination{
+    margin: 0 0 50px;
+    text-align: center;
+    .screen-reader-text{
+        display: none;
+    }
+    .nav-links{
+        .page-numbers{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            @include border-radius(20px);
+            background-color: #f2ebf1;
+            color: #2c3b54;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 5px;
+            font-size: 14px;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .current{
+            background-color: #0759b3;
+            color: white;
+        }
+        .prev, .next{
+            background-color: transparent;
+            color: #3d609c;
+            width: auto;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+
+
+.yellow-template{
+    a{
+        color: #e9c002;
+    }
+    .site-title {
+        .title {
+            color: #edb915;
+        }
+    }
+}
+
+.blue-template{
+    a{
+        color: #0372be;
+    }
+    .site-title {
+        border-bottom: 1px solid #8ec0e1;
+        @include box-shadow(0 1px 0 #2a89c7);
+        .title {
+            color: #0970c1;
+        }
+    }
+}
+
+
+
+
+
+
+
