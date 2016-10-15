@@ -61,6 +61,7 @@
 
 
 				<div class="copyright">
+					<a href="#body" class="back-to-top anchor"><i class="fa fa-angle-up"></i></a>
 					<?= get_option('copyright_' . ICL_LANGUAGE_CODE) ?>
 				</div>
 			</div>

@@ -15,6 +15,9 @@
 
     .panel-grid-cell{
         margin-bottom: 20px;
+        @media screen and (max-width: 767px) {
+            width: 100% !important;
+        }
         @include tablet{
             margin-bottom: 0;
         }

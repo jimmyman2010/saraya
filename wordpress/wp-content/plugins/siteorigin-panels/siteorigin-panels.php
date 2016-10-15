@@ -1133,11 +1133,7 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 			}
 			$grid_cell_index++;
 			$percent = floatval($panels_data['grid_cells'][$grid_cell_index]['weight']) * 100;
-			if($percent == 100 || $percent == 50 || $percent == 33.333333333333 || $percent == 25 || $percent == 20){
-				echo '>';
-			} else {
-				echo ' style="width: ' . $percent . '%;">';
-			}
+			echo ' style="width: ' . $percent . '%;">';
 
 
 			$cell_style_wrapper = siteorigin_panels_start_style_wrapper( 'cell', array(), !empty($panels_data['grids'][$gi]['style']) ? $panels_data['grids'][$gi]['style'] : array() );
