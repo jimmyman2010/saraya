@@ -37,38 +37,42 @@
 			</div>
 		</div>
 
-		<nav class="site-menu">
-			<div class="container">
-				<a href="javascript:void(0);" class="toggle-main-menu">
-					<span></span>
-					<span></span>
-					<span></span>
-				</a>
-				<div class="main-menu-wrap">
-					<?php
-					if ( has_nav_menu( 'primary' ) ) {
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class' => 'main-menu',
-							'container' => 'ul'
-						) );
+		<div class="site-menu-wrapper">
 
-					} ?>
+			<nav class="site-menu">
+				<div class="container">
+					<a href="javascript:void(0);" class="toggle-main-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+					<div class="main-menu-wrap">
+						<?php
+						if ( has_nav_menu( 'primary' ) ) {
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_class' => 'main-menu',
+								'container' => 'ul'
+							) );
+
+						} ?>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
 
-		<?php echo clean_custom_menus('primary'); ?>
+			<?php echo clean_custom_menus('primary'); ?>
 
-		<div class="slogan">
-			<div class="container">
-				<div class="h1"><i class="fa fa-newspaper-o"></i> <span>LATEST NEWS</span></div>
-				<div class="connect">
-					<?= get_option('slogan_' . ICL_LANGUAGE_CODE) ?>
-				</div>
-			</div>
 		</div>
 
 
 	</header>
+
+	<div class="slogan">
+		<div class="container">
+			<div class="h1"><i class="fa fa-newspaper-o"></i> <span>LATEST NEWS</span></div>
+			<div class="connect">
+				<?= get_option('slogan_' . ICL_LANGUAGE_CODE) ?>
+			</div>
+		</div>
+	</div>
 

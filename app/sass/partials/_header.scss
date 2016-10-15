@@ -309,55 +309,16 @@
 
     }
 
-    .slogan{
-        display: none;
-        color: #33485d;
-        @include clearfix;
-        padding: 12px;
-        @include tablet{
-            display: block;
-        }
-        .h1{
-            float: left;
-            font-size: 18px;
-            font-family: $font-bold;
-            margin: 4px 5px;
-            span{
-                font-size: 15px;
-            }
-        }
-        .connect{
-            text-align: right;
-            font-size: 14px;
-            color: #5f7080;
-            .sn{
-                line-height: 32px;
-                a{
-                    display: inline-block;
-                    margin: 0 0 0 5px;
-                    width: 30px;
-                    height: 30px;
-                    text-align: center;
-                    @include border-radius(23px);
-                    color: white;
-                }
-                .sn--tw{
-                    background-color: #64a7f5;
-                }
-                .sn--fb{
-                    background-color: #3b5999;
-                }
-                .sn--in{
-                    background-color: #d0011b;
-                }
-            }
-        }
+    .site-menu-wrapper{
+        position: relative;
     }
 
     .submenu{
         display: none;
         @include box-shadow(0 10px 20px -10px rgba(0, 0, 0, 0.2));
         position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
         z-index: 8000;
         background: white;
@@ -409,6 +370,51 @@
                     background-color: #e5f3dc;
                     text-decoration: none;
                 }
+            }
+        }
+    }
+}
+
+.slogan{
+    display: none;
+    color: #33485d;
+    @include clearfix;
+    padding: 12px;
+    @include tablet{
+        display: block;
+    }
+    .h1{
+        float: left;
+        font-size: 18px;
+        font-family: $font-bold;
+        margin: 4px 5px;
+        span{
+            font-size: 15px;
+        }
+    }
+    .connect{
+        text-align: right;
+        font-size: 14px;
+        color: #5f7080;
+        .sn{
+            line-height: 32px;
+            a{
+                display: inline-block;
+                margin: 0 0 0 5px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                @include border-radius(23px);
+                color: white;
+            }
+            .sn--tw{
+                background-color: #64a7f5;
+            }
+            .sn--fb{
+                background-color: #3b5999;
+            }
+            .sn--in{
+                background-color: #d0011b;
             }
         }
     }
