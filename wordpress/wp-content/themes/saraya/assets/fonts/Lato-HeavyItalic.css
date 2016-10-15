@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Lato Heavy";
+    src: url("Lato-HeavyItalic.eot"); /* IE9 */
+    src: url("Lato-HeavyItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Lato-HeavyItalic.woff") format("woff"), /* chrome, firefox */
+    url("Lato-HeavyItalic.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("Lato-HeavyItalic.svg#Lato Heavy") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

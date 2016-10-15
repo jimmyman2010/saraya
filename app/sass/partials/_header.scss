@@ -30,6 +30,7 @@
         margin-right: 50px;
         @include tablet{
             margin-right: 0;
+            float: right;
         }
         #lang_sel{
 

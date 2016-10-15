@@ -21,7 +21,7 @@ get_header(); ?>
 			<?php dickinsons_the_breadcrumbs(); ?>
 			<h1 class="title"><span>
 				Blog
-			</span><img src="<?= get_template_directory_uri(); ?>/images/flower-bracket.png" alt=""/></h1>
+			</span><img src="<?= get_template_directory_uri(); ?>/assets/images/flower-bracket.png" alt=""/></h1>
 		</div>
 		<div class="main-container clearfix">
 

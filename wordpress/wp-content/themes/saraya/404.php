@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php dickinsons_the_breadcrumbs(); ?>
 			<h1 class="title"><span>
 				<?php _e( 'Page not found.', 'dickinsons' ); ?>
-			</span><img src="<?= get_template_directory_uri(); ?>/images/flower-bracket.png" alt=""/></h1>
+			</span><img src="<?= get_template_directory_uri(); ?>/assets/images/flower-bracket.png" alt=""/></h1>
 		</div>
 	</div>
 	<div class="main-container clearfix">

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Lato Semibold";
+    src: url("Lato-Semibold.eot"); /* IE9 */
+    src: url("Lato-Semibold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Lato-Semibold.woff") format("woff"), /* chrome, firefox */
+    url("Lato-Semibold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("Lato-Semibold.svg#Lato Semibold") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

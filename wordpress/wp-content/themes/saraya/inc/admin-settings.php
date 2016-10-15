@@ -11,12 +11,12 @@ function my_settings_enqueue($hook) {
         return;
     }
 
-    wp_enqueue_style( 'my_settings_admin_codemirror_css', get_template_directory_uri() . '/css/codemirror.css', false, VERSION );
-    wp_enqueue_style( 'my_settings_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, VERSION );
+    wp_enqueue_style( 'my_settings_admin_codemirror_css', get_template_directory_uri() . '/assets/css/codemirror.css', false, VERSION );
+    wp_enqueue_style( 'my_settings_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, VERSION );
 
-    wp_enqueue_script( 'my_settings_admin_codemirror_js', get_template_directory_uri() . '/js/codemirror.js', array(), VERSION, true );
-    wp_enqueue_script( 'my_settings_admin_xml_js', get_template_directory_uri() . '/js/xml.js', array(), VERSION, true );
-    wp_enqueue_script( 'my_settings_admin_js', get_template_directory_uri() . '/js/codestyle.js', array('my_settings_admin_codemirror_js', 'my_settings_admin_xml_js'), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_codemirror_js', get_template_directory_uri() . '/assets/js/codemirror.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_xml_js', get_template_directory_uri() . '/assets/js/xml.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_js', get_template_directory_uri() . '/assets/js/codestyle.js', array('my_settings_admin_codemirror_js', 'my_settings_admin_xml_js'), VERSION, true );
 
 }
 add_action( 'admin_enqueue_scripts', 'my_settings_enqueue' );
@@ -40,6 +40,10 @@ function register_dickinsons_settings() {
     //register header settings
     register_setting( 'dickinsons-settings-header', 'slogan_en' );
     register_setting( 'dickinsons-settings-header', 'slogan_vi' );
+    register_setting( 'dickinsons-settings-header', 'where_to_buy_en' );
+    register_setting( 'dickinsons-settings-header', 'where_to_buy_vi' );
+    register_setting( 'dickinsons-settings-header', 'where_to_buy_link_en' );
+    register_setting( 'dickinsons-settings-header', 'where_to_buy_link_vi' );
 
     //register sidebar settings
     register_setting( 'dickinsons-settings-sidebar', 'our_products_en' );
@@ -107,6 +111,24 @@ function dickinsons_settings_page() {
                     </tr>
                 </thead>
                 <tbody>
+                    <tr valign="top" class="slogan">
+                        <th scope="row">Where to buy</th>
+                        <td>
+                            <input type="text" id="where_to_buy_en" name="where_to_buy_en" value="<?php echo trim( get_option('where_to_buy_en') ); ?>"/>
+                        </td>
+                        <td>
+                            <input type="text" id="where_to_buy_vi" name="where_to_buy_vi" value="<?php echo trim( get_option('where_to_buy_vi') ); ?>"/>
+                        </td>
+                    </tr>
+                    <tr valign="top" class="slogan">
+                        <th scope="row">Where to buy link</th>
+                        <td>
+                            <input type="text" id="where_to_buy_link_en" name="where_to_buy_link_en" value="<?php echo trim( get_option('where_to_buy_link_en') ); ?>"/>
+                        </td>
+                        <td>
+                            <input type="text" id="where_to_buy_link_vi" name="where_to_buy_link_vi" value="<?php echo trim( get_option('where_to_buy_link_vi') ); ?>"/>
+                        </td>
+                    </tr>
                     <tr valign="top" class="slogan">
                         <th scope="row">Slogan</th>
                         <td>

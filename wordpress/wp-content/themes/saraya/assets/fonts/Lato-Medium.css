@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Lato Medium";
+    src: url("Lato-Medium.eot"); /* IE9 */
+    src: url("Lato-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Lato-Medium.woff") format("woff"), /* chrome, firefox */
+    url("Lato-Medium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("Lato-Medium.svg#Lato Medium") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

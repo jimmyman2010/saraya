@@ -32,7 +32,7 @@ gulp.task('default', ['clean'], function(){
 gulp.task('svgmin', function () {
     return gulp.src('app/svg/*.svg')
         .pipe(svgmin())
-        .pipe(gulp.dest('dist/svg'));
+        .pipe(gulp.dest('wordpress/wp-content/themes/saraya/assets/svg'));
 });
 
 gulp.task('compass', function() {
@@ -56,7 +56,7 @@ gulp.task('images', function(){
                 cleanupIDs: false
             }]
         }))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('wordpress/wp-content/themes/saraya/assets/images'));
 });
 
 gulp.task('html', function() {
@@ -64,7 +64,7 @@ gulp.task('html', function() {
         .pipe(useref({searchPath: ['app', '.']}))
         .pipe(gulpif('*.min.js', uglify()))
         .pipe(gulpif('*.min.css', cssnano({ zindex: false })))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('wordpress/wp-content/themes/saraya/assets/'));
 });
 
 gulp.task('fonts', function() {
@@ -72,7 +72,7 @@ gulp.task('fonts', function() {
         'app/fonts/*.ttf'
     ]).pipe(fontmin())
         .pipe(gulp.dest('.tmp/fonts'))
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('wordpress/wp-content/themes/saraya/assets/fonts'));
 });
 
 gulp.task('html-include', function() {
@@ -110,7 +110,7 @@ gulp.task('serve', ['html-include', 'fonts', 'compass'], function() {
 });
 
 gulp.task('clean', function() {
-    return gulp.src(['dist/*'], { read: true }) //much faster
+    return gulp.src(['wordpress/wp-content/themes/saraya/assets/*'], { read: true }) //much faster
         .pipe(rimraf({
             force: true
         }));

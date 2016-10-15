@@ -157,8 +157,8 @@ add_action( 'wp_head', 'dickinsons_javascript_detection', 0 );
  */
 function dickinsons_scripts() {
 	// Add css, used in the main stylesheet.
-	wp_enqueue_style( 'dickinsons-vendor', get_template_directory_uri() . '/css/vendor.min.css', array(), VERSION );
-	wp_enqueue_style( 'dickinsons-global', get_template_directory_uri() . '/css/global.min.css', array(), VERSION );
+	wp_enqueue_style( 'dickinsons-vendor', get_template_directory_uri() . '/assets/css/vendor.min.css', array(), VERSION );
+	wp_enqueue_style( 'dickinsons-global', get_template_directory_uri() . '/assets/css/global.min.css', array(), VERSION );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'dickinsons-style', get_stylesheet_uri(), array(), VERSION );
@@ -168,11 +168,11 @@ function dickinsons_scripts() {
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		//wp_enqueue_script( 'dickinsons-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
+		//wp_enqueue_script( 'dickinsons-keyboard-image-navigation', get_template_directory_uri() . '/assets/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
 
-	wp_enqueue_script( 'dickinsons-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(  ), VERSION, true );
-	wp_enqueue_script( 'dickinsons-script', get_template_directory_uri() . '/js/global.js', array( 'dickinsons-vendor' ), VERSION, true );
+	wp_enqueue_script( 'dickinsons-vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array(  ), VERSION, true );
+	wp_enqueue_script( 'dickinsons-script', get_template_directory_uri() . '/assets/js/global.js', array( 'dickinsons-vendor' ), VERSION, true );
 
 	wp_localize_script( 'dickinsons-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'dickinsons' ),
@@ -352,7 +352,7 @@ function advlink_register_buttons( $buttons ) {
 add_filter( 'mce_external_plugins', 'advlink_register_tinymce_javascript' );
 
 function advlink_register_tinymce_javascript( $plugins ) {
-	$plugins['advlink'] = get_template_directory_uri() . '/plugins/advlink/plugin.js';
+	$plugins['advlink'] = get_template_directory_uri() . '/assets/plugins/advlink/plugin.js';
 	return $plugins;
 }
 
