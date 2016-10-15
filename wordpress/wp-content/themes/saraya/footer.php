@@ -11,14 +11,6 @@
 
 	<footer class="site-footer">
 
-		<section class="subscribe">
-			<div class="container">
-				<div class="subscribe-form">
-					<?= get_option('subscribe_' . ICL_LANGUAGE_CODE) ?>
-				</div>
-			</div>
-		</section>
-		<div class="bar"></div>
 		<section class="socials-network">
 			<div class="container">
 				<?= get_option('connect_with_us_' . ICL_LANGUAGE_CODE) ?>
@@ -32,6 +24,15 @@
 				} ?>
 			</div>
 		</section>
+
+		<section class="subscribe">
+			<div class="container">
+				<div class="subscribe-form">
+					<?= get_option('subscribe_' . ICL_LANGUAGE_CODE) ?>
+				</div>
+			</div>
+		</section>
+
 		<section class="footer--info">
 			<div class="container">
 				<div class="three-column">

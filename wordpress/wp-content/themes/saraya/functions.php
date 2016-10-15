@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.4.6');
+define('VERSION', '1.0.0.0');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
@@ -74,6 +74,7 @@ function dickinsons_setup() {
 	set_post_thumbnail_size( 200, 140 );
 
 	add_image_size('thumb_footer', 90, 90, true);
+	add_image_size('thumb_menu', 130, 130, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -320,6 +321,7 @@ require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
 require get_template_directory() . '/inc/admin-settings.php';
 require get_template_directory() . '/inc/random-widget.php';
+require get_template_directory() . '/inc/custom_wp_nav_menu.php';
 
 /**
  * Disabling WPML�s CSS and JS files

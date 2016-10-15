@@ -13,8 +13,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=David+Libre:700&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
 
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -54,6 +52,7 @@
 							'menu_class' => 'main-menu',
 							'container' => 'ul'
 						) );
+
 					} ?>
 				</div>
 			</div>
@@ -68,53 +67,8 @@
 			</div>
 		</div>
 
-		<div class="submenu">
-			<div class="container">
-				<ul class="menu-link">
-					<li class="links">
-						<h3>Market Segments & Products</h3>
-						<ul>
-							<li><a href="#">Healthcare Hygiene</a></li>
-							<li><a href="#">Food Sanitation</a></li>
-							<li><a href="#">Public Health Hygiene</a></li>
-							<li><a href="#">Consumer</a></li>
-						</ul>
-					</li>
-					<li>
-						<h4>Healthcare Products</h4>
-						<figure>
-							<a href="#">
-								<img src="images/menu/img1.jpg" alt=""/>
-							</a>
-						</figure>
-					</li>
-					<li>
-						<h4>Public Health Hygiene</h4>
-						<figure>
-							<a href="#">
-								<img src="images/menu/img2.jpg" alt=""/>
-							</a>
-						</figure>
-					</li>
-					<li>
-						<h4>Food Sanitation</h4>
-						<figure>
-							<a href="#">
-								<img src="images/menu/img3.jpg" alt=""/>
-							</a>
-						</figure>
-					</li>
-					<li>
-						<h4>Cusomers</h4>
-						<figure>
-							<a href="#">
-								<img src="images/menu/img4.jpg" alt=""/>
-							</a>
-						</figure>
-					</li>
-				</ul>
-			</div>
-		</div>
+		<?= clean_custom_menus('primary') ?>
+
 
 	</header>
 

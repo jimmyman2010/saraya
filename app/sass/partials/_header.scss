@@ -22,7 +22,11 @@
         }
     }
     .where-to-buy{
-        float: left;
+        display: none;
+        @include tablet {
+            display: block;
+            float: left;
+        }
     }
 
     .language{
@@ -123,9 +127,17 @@
                 margin: 2px 0 3px;
                 background-color: black;
                 @include border-radius(1px);
-                width: 80%;
+                width: 24px;
+                clear: right;
                 &:nth-child(2){
-                    width: 50%;
+                    width: 18px;
+                }
+            }
+            @include tablet{
+                position: static;
+                float: right;
+                span{
+                    background-color: white;
                 }
             }
             @include desktop{
@@ -135,18 +147,17 @@
             &.open {
                 span{
                     &:nth-child(1){
-                        @include transform(rotate(43deg) translate(6px, 6px));
+                        @include transform(rotate(43deg) translate(4px, 10px));
                     }
                     &:nth-child(2){
                         width: 0;
                     }
                     &:nth-child(3){
-                        @include transform(rotate(-47deg));
+                        @include transform(rotate(-47deg) translate(3px, -8px));
                     }
                 }
                 ~ .main-menu-wrap .main-menu {
-                    padding: 10px;
-                    @include border-radius(0 0 20px 20px);
+                    padding: 0 15px;
                     > .menu-item {
                         display: block;
                     }
@@ -160,19 +171,15 @@
             left: 0;
             width: 100%;
             z-index: 200;
-            margin-top: 8px;
-            padding: 0 10px;
             @include desktop{
                 position: static;
-                margin-top: 0;
-                padding: 0;
             }
         }
 
         .main-menu{
             @include clearfix;
 
-            background-color: #988675;
+            background-color: #529722;
             @include desktop{
                 background-color: transparent;
             }
@@ -180,8 +187,8 @@
             > .menu-item{
                 display: none;
                 position: relative;
-                padding: 6px 5px;
-                font-size: 16px;
+                padding: 5px 0;
+                font-size: 13px;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
                 &:first-child{
                     border-top: none;
@@ -190,17 +197,17 @@
                     font-size: 15px;
                     float: left;
                     display: block;
-                    padding: 13px 10px 11px;
+                    padding: 0 10px;
                     border-top: none;
                 }
                 > a{
                     display: block;
                     text-transform: uppercase;
-                    height: 30px;
-                    line-height: 30px;
                     color: white;
-                    padding: 0 12px;
-                    @include border-radius(10px);
+                    padding: 9px 5px 8px;
+                    @include desktop{
+                        padding: 18px 12px 17px;
+                    }
 
                     &:hover{
                         text-decoration: none;
@@ -215,11 +222,8 @@
                     }
                 }
                 .sub-menu{
-                    font-weight: 400;
-                    height: 0;
-                    overflow: hidden;
-                    @include border-radius(0 0 10px 10px);
                     @include transition(all 0.3s);
+                    @include box-shadow(0 3px 13px -5px rgba(0, 0, 0, 0.5));
 
                     @include desktop{
                         z-index: 1000;
@@ -229,12 +233,12 @@
                         height: 0;
                         overflow: hidden;
                         @include opacity(0);
-                        background-color: #988675;
+                        background-color: white;
                         width: 283px;
                     }
 
                     li{
-                        border-top: 1px solid rgba(255,255,255,0.3);
+                        border-top: 1px solid #f7f7f7;
                         &:first-child{
                             border-top: none;
                         }
@@ -245,10 +249,9 @@
                     a{
                         display: block;
                         padding: 10px;
-                        @include border-radius(10px);
-                        color: #fff;
+                        color: #354a5f;
                         &:hover{
-                            background-color: rgba(255,255,255,0.2);
+                            background-color: #e5f3dc;
                             text-decoration: none;
                         }
                     }
@@ -270,6 +273,12 @@
                             border-bottom: 10px solid white;
                         }
                     }
+                }
+            }
+
+            .special-submenu .sub-menu{
+                @include desktop{
+                    display: none;
                 }
             }
 
@@ -297,9 +306,13 @@
     }
 
     .slogan{
+        display: none;
         color: #33485d;
         @include clearfix;
         padding: 12px;
+        @include tablet{
+            display: block;
+        }
         .h1{
             float: left;
             font-size: 18px;
@@ -340,6 +353,10 @@
     .submenu{
         display: none;
         @include box-shadow(0 10px 20px -10px rgba(0, 0, 0, 0.2));
+        position: absolute;
+        width: 100%;
+        z-index: 8000;
+        background: white;
     }
     .menu-link{
         @include clearfix;
@@ -370,6 +387,9 @@
                     border-top: none;
                     margin-top: 10px;
                 }
+                &:hover, &:hover + li{
+                    border-top-color: transparent;
+                }
             }
             h3{
                 text-transform: uppercase;
@@ -386,9 +406,6 @@
                     text-decoration: none;
                 }
             }
-        }
-        img{
-            width: 100%;
         }
     }
 }
