@@ -1064,9 +1064,6 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 		$siteorigin_panels_inline_css[$post_id] = siteorigin_panels_generate_css($post_id, $panels_data);
 	}
 
-	echo "<pre>";
-	print_r($panels_data['grid_cells']);
-	echo "</pre>";
 	$grid_cell_index = -1;
 
 	echo apply_filters( 'siteorigin_panels_before_content', '', $panels_data, $post_id );
