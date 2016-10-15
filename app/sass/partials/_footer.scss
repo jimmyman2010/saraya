@@ -34,6 +34,10 @@
             }
 
             .form{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                }
                 @include desktop {
                     float: right;
                     width: 520px;
@@ -42,6 +46,7 @@
 
             .wrap-input{
                 position: relative;
+                text-align: left;
                 i{
                     position: absolute;
                     right: 10px;
@@ -76,7 +81,11 @@
                 }
             }
             .button{
-                margin-left: 10px;
+                margin-top: 15px;
+                @include tablet{
+                    margin-top: 0;
+                    margin-left: 10px;
+                }
             }
         }
     }

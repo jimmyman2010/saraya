@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.0.4');
+define('VERSION', '1.0.0.5');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
