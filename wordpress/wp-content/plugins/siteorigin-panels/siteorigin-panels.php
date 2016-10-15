@@ -1064,6 +1064,11 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 		$siteorigin_panels_inline_css[$post_id] = siteorigin_panels_generate_css($post_id, $panels_data);
 	}
 
+	echo "<pre>";
+	print_r($panels_data['grid_cells']);
+	echo "</pre>";
+	$grid_cell_index = -1;
+
 	echo apply_filters( 'siteorigin_panels_before_content', '', $panels_data, $post_id );
 
 	foreach ( $grids as $gi => $cells ) {
@@ -1129,7 +1134,14 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 			foreach ( $cell_attributes as $name => $value ) {
 				echo $name.'="'.esc_attr($value).'" ';
 			}
-			echo '>';
+			$grid_cell_index++;
+			$percent = floatval($panels_data['grid_cells'][$grid_cell_index]['weight']) * 100;
+			if($percent == 100 || $percent == 50 || $percent == 33.333333333333 || $percent == 25 || $percent == 20){
+				echo '>';
+			} else {
+				echo ' style="width: ' . $percent . '%;">';
+			}
+
 
 			$cell_style_wrapper = siteorigin_panels_start_style_wrapper( 'cell', array(), !empty($panels_data['grids'][$gi]['style']) ? $panels_data['grids'][$gi]['style'] : array() );
 			if( !empty($cell_style_wrapper) ) echo $cell_style_wrapper;
