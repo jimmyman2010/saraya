@@ -58,6 +58,8 @@
 			</div>
 		</nav>
 
+		<?php echo clean_custom_menus('primary'); ?>
+
 		<div class="slogan">
 			<div class="container">
 				<div class="h1"><i class="fa fa-newspaper-o"></i> <span>LATEST NEWS</span></div>
@@ -66,8 +68,6 @@
 				</div>
 			</div>
 		</div>
-
-		<?= clean_custom_menus('primary') ?>
 
 
 	</header>

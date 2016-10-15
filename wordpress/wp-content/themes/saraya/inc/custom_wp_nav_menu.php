@@ -23,7 +23,7 @@ function clean_custom_menus($menu_name) {
 }
 
 function clean_custom_menu_details($menu_items, $menu_item_parent){
-    $str = '<div class="submenu menu-index-' . $menu_item_parent->ID . '">
+    $str = '<div class="submenu menu-item-' . $menu_item_parent->ID . '">
             <div class="container">
                 <ul class="menu-link">
                     <li class="links">
@@ -44,13 +44,15 @@ function clean_custom_menu_details($menu_items, $menu_item_parent){
             $str .= '<li>
                         <h4>' . $menu_item->title . '</h4>
                         <figure>
-                            <a href="' . $menu_item->url . '">
-                                ' . get_the_post_thumbnail($menu_item->ID, 'thumb_menu') . '
+                            <a href="' . $menu_item->url . '">' . get_the_post_thumbnail(intval($menu_item->object_id), 'thumb_menu') . '
                             </a>
                         </figure>
                     </li>';
         }
     }
 
+    $str .= '    </ul>
+             </div>
+             </div>';
     return $str;
 }

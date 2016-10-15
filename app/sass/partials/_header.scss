@@ -147,13 +147,13 @@
             &.open {
                 span{
                     &:nth-child(1){
-                        @include transform(rotate(43deg) translate(4px, 10px));
+                        @include transform(rotate(43deg) translate(8px, 6px));
                     }
                     &:nth-child(2){
                         width: 0;
                     }
                     &:nth-child(3){
-                        @include transform(rotate(-47deg) translate(3px, -8px));
+                        @include transform(rotate(-47deg) translate(7px, -5px));
                     }
                 }
                 ~ .main-menu-wrap .main-menu {
@@ -223,18 +223,19 @@
                 }
                 .sub-menu{
                     @include transition(all 0.3s);
-                    @include box-shadow(0 3px 13px -5px rgba(0, 0, 0, 0.5));
+                    padding: 0 10px;
+                    height: 0;
+                    overflow: hidden;
 
                     @include desktop{
                         z-index: 1000;
                         position: absolute;
                         left: 0;
                         top: 100%;
-                        height: 0;
-                        overflow: hidden;
                         @include opacity(0);
                         background-color: white;
                         width: 283px;
+                        @include box-shadow(0 3px 13px -5px rgba(0, 0, 0, 0.5));
                     }
 
                     li{
@@ -249,10 +250,13 @@
                     a{
                         display: block;
                         padding: 10px;
-                        color: #354a5f;
-                        &:hover{
-                            background-color: #e5f3dc;
-                            text-decoration: none;
+                        color: white;
+                        @include desktop {
+                            color: #354a5f;
+                            &:hover {
+                                background-color: #e5f3dc;
+                                text-decoration: none;
+                            }
                         }
                     }
                 }
