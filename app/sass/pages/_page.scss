@@ -26,6 +26,9 @@
             bottom: 26px;
             background-color: white;
             padding: 10px 15px;
+            img{
+                display: none;
+            }
         }
     }
 
@@ -51,10 +54,6 @@
     padding: 15px 10px ;
     border-bottom: 1px solid #eeeeee;
     color: #41464c;
-    margin-bottom: 30px;
-    @include tablet{
-        margin-bottom: 50px;
-    }
     .breadcrumbs {
         font-size: 14px;
         li {
@@ -76,6 +75,19 @@
                 font-size: 1.3em;
             }
         }
+    }
+}
+
+.home {
+    .site-title, .site-breadcrumb{
+        display: none;
+    }
+}
+
+.main-container{
+    margin-top: 30px;
+    @include tablet{
+        margin-top: 50px;
     }
 }
 

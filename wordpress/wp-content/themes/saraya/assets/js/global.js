@@ -92,6 +92,12 @@ var DKS = (function(){
                 }
             });
         },
+        backgroundTitle: function(){
+            $('.has-background').each(function(){
+                var src = $(this).find('.wp-post-image').attr('src');
+                $(this).css('background-image', 'url("' + src + '")');
+            });
+        },
         historyTab: function(){
             var siteHistory = $('.site-history');
             if(siteHistory.length > 0){
@@ -115,6 +121,7 @@ var DKS = (function(){
             method.menuToggle();
             method.menuHover();
             method.historyTab();
+            method.backgroundTitle();
         }
     };
     return {

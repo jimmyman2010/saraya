@@ -9,11 +9,12 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="site-title">
+	<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> ">
 		<div class="container">
 			<div class="title">
 				<h1>Our Blog</h1>
 				<h2>& Latest News</h2>
+				<?php echo get_the_post_thumbnail(null, 'banner') ?>
 			</div>
 		</div>
 	</div>

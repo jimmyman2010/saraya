@@ -75,6 +75,7 @@ function dickinsons_setup() {
 
 	add_image_size('thumb_footer', 90, 90, true);
 	add_image_size('thumb_menu', 130, 130, true);
+	add_image_size('banner', 1200, 350, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(

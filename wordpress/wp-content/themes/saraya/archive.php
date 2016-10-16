@@ -18,23 +18,23 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="container">
-		<div class="site-title">
-			<div class="container">
-				<div class="title">
-					<h2>Archive</h2>
-					<h1><?php the_archive_title(); ?></h1>
-				</div>
+	<div class="site-title">
+		<div class="container">
+			<div class="title">
+				<h2>Archive</h2>
+				<h1><?php the_archive_title(); ?></h1>
 			</div>
 		</div>
-		<div class="site-breadcrumb">
-			<div class="container">
-				<?php dickinsons_the_breadcrumbs(); ?>
-			</div>
+	</div>
+	<div class="site-breadcrumb">
+		<div class="container">
+			<?php dickinsons_the_breadcrumbs(); ?>
 		</div>
+	</div>
 
-		<div class="main-container clearfix">
+	<div class="main-container clearfix">
 
+		<div class="container">
 			<section class="blog-content" role="main">
 
 				<?php if ( have_posts() ) : ?>
