@@ -37,19 +37,33 @@ function get_all_history() {
     get_the_content();
     $query = new WP_Query( $args );
 
-    $quo = '<div class="site-history">';
+    $titles = '<ul class="tab-title">';
+    $contents = '<ul class="tab-content">';
     foreach($query->posts as $index => $post) {
         // Build output string
-        $quo .= '<div class="body" ';
-        if($index > 0) {
-            //$quo .= 'style="display:none;"';
+        if($index === 0) {
+            $titles .= '<li class="active"><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $contents .= '<li class="tab-item-' . $index . ' active">
+                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <div class="body">
+                                ' . nl2p($post->post_content) . '
+                            </div>
+                        </li>';
+        } else {
+            $titles .= '<li><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $contents .= '<li class="tab-item-' . $index . '">
+                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <div class="body">
+                                ' . nl2p($post->post_content) . '
+                            </div>
+                        </li>';
         }
-        $quo .= '>' .
-            nl2p($post->post_content) . '</div>';
     }
-    $quo .= '</div>';
+    $titles .= '</ul>';
+    $contents .= '</ul>';
 
-    return $quo;
+
+    return '<div class="site-history">' . $titles . $contents . '</div>';
 }
 
 

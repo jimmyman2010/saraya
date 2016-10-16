@@ -77,10 +77,13 @@
         }
         li{
             border-top: 1px solid #eee;
-            @include tablet{
-                display: none;
-                padding: 35px;
+            &:first-child{
                 border-top: none;
+            }
+            @include desktop{
+                display: none;
+                border-top: none;
+                padding: 35px;
                 .body{
                     display: block;
                 }
@@ -104,6 +107,9 @@
 
         .active{
             font-family: $font-bold;
+            @include desktop{
+                display: block;
+            }
             .body {
                 display: block;
             }
