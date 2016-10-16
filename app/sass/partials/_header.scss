@@ -188,13 +188,14 @@
                 display: none;
                 position: relative;
                 padding: 5px 0;
-                font-size: 13px;
+                font-size: 12px;
+                font-family: $font-bold;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
                 &:first-child{
                     border-top: none;
                 }
                 @include desktop{
-                    font-size: 15px;
+                    font-size: 14px;
                     float: left;
                     display: block;
                     padding: 0 10px;
@@ -385,14 +386,12 @@
     }
     .h1{
         float: left;
-        font-size: 18px;
+        font-size: 14px;
         font-family: $font-bold;
         margin: 4px 5px;
-        span{
-            font-size: 15px;
-        }
     }
     .connect{
+        font-family: $font-light;
         text-align: right;
         font-size: 14px;
         color: #5f7080;
@@ -419,63 +418,6 @@
         }
     }
 }
-
-
-.blue-template{
-    .site-menu {
-        background: #BBDAFC;
-        .bar {
-            background-color: $color-blue;
-        }
-
-        .main-menu {
-            background-color: #BBDAFC;
-            > .menu-item {
-                &:hover {
-                    background-color: #96C5EF;
-                }
-                > a {
-                    color: #0057ae;
-                    &.active, &:hover {
-                        color: #01529c;
-                    }
-                }
-                .sub-menu{
-                    @include desktop {
-                        background-color: #BBDAFC;
-                    }
-                    a{
-                        color:#0057ae;
-                    }
-                }
-            }
-            .yellow-label {
-                .sub-menu{
-                    background-color: $color-yellow;
-                    a{
-                        color: #564e44;
-                    }
-                }
-            }
-
-            .blue-label {
-                a {
-                    color: white;
-                    &:hover {
-                        color: white;
-                    }
-                }
-                .sub-menu{
-                    background-color: $color-blue;
-                    a{
-                        color:white;
-                    }
-                }
-            }
-        }
-    }
-}
-
 
 
 .lang-vi{
