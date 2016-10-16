@@ -23,7 +23,7 @@ function clean_custom_menus($menu_name) {
 }
 
 function clean_custom_menu_details($menu_items, $menu_item_parent){
-    $str = '<div class="submenu menu-item-' . $menu_item_parent->ID . '">
+    $str = '<div class="submenu" data-id="menu-item-' . $menu_item_parent->ID . '">
             <div class="container">
                 <ul class="menu-link">
                     <li class="links">
