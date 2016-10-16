@@ -7,10 +7,11 @@
  */
 ?>
 
-<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> ">
+<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> <?= empty( $post->post_parent )? '' : 'child' ?>">
 	<div class="container">
 		<div class="title">
 			<h1><?php echo empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent ); ?></h1>
+			<h2><?php echo empty( $post->post_parent ) ? '' : get_the_title( $post->ID ); ?></h2>
 			<?php echo get_the_post_thumbnail(null, 'banner') ?>
 		</div>
 	</div>

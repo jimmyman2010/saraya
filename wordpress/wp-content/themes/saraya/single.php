@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> ">
+	<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> child">
 		<div class="container">
 			<div class="title">
 				<h1>Our Blog</h1>

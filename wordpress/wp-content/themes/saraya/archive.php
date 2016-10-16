@@ -18,7 +18,7 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="site-title">
+	<div class="site-title child">
 		<div class="container">
 			<div class="title">
 				<h2>Archive</h2>

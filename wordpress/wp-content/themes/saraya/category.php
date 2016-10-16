@@ -18,12 +18,11 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="site-title <?= has_post_thumbnail() ? 'has-background' : '' ?> ">
+	<div class="site-title child">
 		<div class="container">
 			<div class="title">
 				<h2>Category</h2>
 				<h1><?php single_tag_title(); ?></h1>
-				<?php echo get_the_post_thumbnail(null, 'banner') ?>
 			</div>
 		</div>
 	</div>
