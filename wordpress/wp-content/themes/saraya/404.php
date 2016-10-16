@@ -9,14 +9,19 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="container">
-		<div class="site-title">
-			<?php dickinsons_the_breadcrumbs(); ?>
-			<h1 class="title"><span>
-				<?php _e( 'Page not found.', 'dickinsons' ); ?>
-			</span><img src="<?= get_template_directory_uri(); ?>/assets/images/flower-bracket.png" alt=""/></h1>
+	<div class="site-title">
+		<div class="container">
+			<div class="title">
+				<h1><?php _e( 'Page not found.', 'dickinsons' ); ?></h1>
+			</div>
 		</div>
 	</div>
+	<div class="site-breadcrumb">
+		<div class="container">
+			<?php dickinsons_the_breadcrumbs(); ?>
+		</div>
+	</div>
+
 	<div class="main-container clearfix">
 		<div class="container">
 			<article class="site-article" role="main">

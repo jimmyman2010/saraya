@@ -92,11 +92,29 @@ var DKS = (function(){
                 }
             });
         },
+        historyTab: function(){
+            var siteHistory = $('.site-history');
+            if(siteHistory.length > 0){
+                siteHistory.on('click', '.toggle', function(){
+                    if(!$(this).parent().hasClass('active')) {
+                        siteHistory.find('.active').removeClass('active');
+                        $(this).parent().addClass('active');
+                        $($(this).data('target')).addClass('active');
+
+                        $('html, body').animate({
+                            scrollTop: siteHistory.offset().top
+                        }, 500);
+                    }
+                });
+
+            }
+        },
         init: function () {
             method.windowWidthHeight();
             method.fullImage();
             method.menuToggle();
             method.menuHover();
+            method.historyTab();
         }
     };
     return {

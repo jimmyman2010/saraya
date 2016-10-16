@@ -1,0 +1,112 @@
+
+.panel-grid-cell {
+    .widget_history_widget {
+        .widget-title {
+            text-align: center;
+            margin: 20px 0;
+            color: #31363c;
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.site-history{
+    .tab-title{
+        display: none;
+        @include clearfix;
+        padding: 15px 0 10px;
+        @include desktop{
+            display: block;
+        }
+        li{
+            float: left;
+            padding: 0 20px;
+            border-left: 1px solid #979797;
+            &:first-child{
+                border-left-color: transparent;
+            }
+            a{
+                color: #333a42;
+                display: block;
+                text-decoration: none;
+            }
+        }
+        .active{
+            position: relative;
+            &:first-child{
+                border-left-color: #979797;
+            }
+            &:last-child{
+                border-right: 1px solid #979797;
+            }
+
+            &:before{
+                content: '';
+                position: absolute;
+                bottom: 100%;
+                left: -1px;
+                display: block;
+                width: calc(100% + 2px);
+                height: 15px;
+                background: white;
+                border-left: 1px solid #979797;
+                border-right: 1px solid #979797;
+                border-top: 1px solid #979797;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: -1px;
+                display: block;
+                width: calc(100% + 2px);
+                height: 11px;
+                background: white;
+                border-left: 1px solid #979797;
+                border-right: 1px solid #979797;
+            }
+        }
+    }
+
+    .tab-content{
+        @include desktop {
+            border-top: 1px solid #979797;
+        }
+        li{
+            border-top: 1px solid #eee;
+            @include tablet{
+                display: none;
+                padding: 35px;
+                border-top: none;
+                .body{
+                    display: block;
+                }
+            }
+
+            .toggle{
+                display: block;
+                color: #36485e;
+                padding: 15px 0;
+                text-decoration: none;
+                @include desktop{
+                    display: none;
+                }
+            }
+
+            .body{
+                display: none;
+                padding-bottom: 20px;
+            }
+        }
+
+        .active{
+            font-family: $font-bold;
+            .body {
+                display: block;
+            }
+        }
+    }
+}

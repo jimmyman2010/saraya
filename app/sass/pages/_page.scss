@@ -51,6 +51,10 @@
     padding: 15px 10px ;
     border-bottom: 1px solid #eeeeee;
     color: #41464c;
+    margin-bottom: 30px;
+    @include tablet{
+        margin-bottom: 50px;
+    }
     .breadcrumbs {
         font-size: 14px;
         li {

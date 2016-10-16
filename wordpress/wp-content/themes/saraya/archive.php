@@ -20,11 +20,19 @@ get_header(); ?>
 <main class="site-main">
 	<div class="container">
 		<div class="site-title">
-			<?php dickinsons_the_breadcrumbs(); ?>
-			<h1 class="title"><span>
-				<?php the_archive_title(); ?>
-			</span><img src="<?= get_template_directory_uri(); ?>/assets/images/flower-bracket.png" alt=""/></h1>
+			<div class="container">
+				<div class="title">
+					<h2>Archive</h2>
+					<h1><?php the_archive_title(); ?></h1>
+				</div>
+			</div>
 		</div>
+		<div class="site-breadcrumb">
+			<div class="container">
+				<?php dickinsons_the_breadcrumbs(); ?>
+			</div>
+		</div>
+
 		<div class="main-container clearfix">
 
 			<section class="blog-content" role="main">

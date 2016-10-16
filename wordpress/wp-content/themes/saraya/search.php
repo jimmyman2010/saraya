@@ -9,15 +9,23 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="container">
-		<div class="site-title">
-			<?php dickinsons_the_breadcrumbs(); ?>
-			<h1 class="title"><span>
-				Search Results
-			</span><img src="<?= get_template_directory_uri(); ?>/assets/images/flower-bracket.png" alt=""/></h1>
+	<div class="site-title">
+		<div class="container">
+			<div class="title">
+				<h2>Search for</h2>
+				<h1><?php echo get_search_query(); ?></h1>
+			</div>
 		</div>
-		<div class="main-container clearfix">
+	</div>
+	<div class="site-breadcrumb">
+		<div class="container">
+			<?php dickinsons_the_breadcrumbs(); ?>
+		</div>
+	</div>
 
+	<div class="main-container">
+
+		<div class="container clearfix">
 			<section class="blog-content" role="main">
 
 				<?php if ( have_posts() ) : ?>

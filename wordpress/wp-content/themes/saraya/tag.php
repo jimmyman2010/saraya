@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying category pages
+ * The template for displaying archive pages
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
@@ -22,7 +22,7 @@ get_header(); ?>
 		<div class="site-title">
 			<div class="container">
 				<div class="title">
-					<h2>Category</h2>
+					<h2>Tagged by</h2>
 					<h1><?php single_tag_title(); ?></h1>
 				</div>
 			</div>

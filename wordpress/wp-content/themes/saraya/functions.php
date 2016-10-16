@@ -319,8 +319,10 @@ require get_template_directory() . '/inc/remove-meta.php';
 
 require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
+require get_template_directory() . '/inc/post-history.php';
 require get_template_directory() . '/inc/admin-settings.php';
 require get_template_directory() . '/inc/random-widget.php';
+require get_template_directory() . '/inc/history-widget.php';
 require get_template_directory() . '/inc/custom_wp_nav_menu.php';
 
 /**
@@ -354,7 +356,7 @@ function advlink_register_buttons( $buttons ) {
 add_filter( 'mce_external_plugins', 'advlink_register_tinymce_javascript' );
 
 function advlink_register_tinymce_javascript( $plugins ) {
-	$plugins['advlink'] = get_template_directory_uri() . '/assets/plugins/advlink/plugin.js';
+	$plugins['advlink'] = get_template_directory_uri() . '/plugins/advlink/plugin.js';
 	return $plugins;
 }
 
