@@ -447,16 +447,16 @@
 }
 
 
+
+
 .lang-vi{
     .site-header .site-menu .main-menu {
         > .menu-item {
-            padding: 6px 0;
+            /*padding: 6px 0;
+			
             @include desktop {
                 padding: 12px 5px;
-            }
-        }
-        .blue-label{
-            left: 130px;
+            }*/
         }
     }
 }
