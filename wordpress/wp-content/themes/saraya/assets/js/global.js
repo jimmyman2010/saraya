@@ -55,15 +55,15 @@ var DKS = (function(){
         menuHover: function(){
             if(method.windowWidthHeight().width >= 1024) {
                 $('.special-submenu').on('mouseover', function () {
-                    $('.submenu.' + $(this).attr('id')).show();
+                    $('.submenu[data-id="' + $(this).attr('id') + '"]').show();
                 }).on('mouseleave', function () {
-                    $('.submenu.' + $(this).attr('id')).hide();
+                    $('.submenu[data-id="' + $(this).attr('id') + '"]').hide();
                 });
 
                 $('.submenu').on('mouseover', function () {
-                    $(this).show();
+                    $('#' + $(this).data('id')).addClass('hover').trigger('mouseover');
                 }).on('mouseleave', function () {
-                    $(this).hide();
+                    $('#' + $(this).data('id')).removeClass('hover').trigger('mouseleave');
                 });
             }
         },
