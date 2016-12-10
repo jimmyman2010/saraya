@@ -13,6 +13,10 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="<?= get_template_directory_uri(); ?>/assets/favicon.png">
+	<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<?= get_template_directory_uri(); ?>/assets/favicon.ico" type="image/x-icon">
+
 
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
