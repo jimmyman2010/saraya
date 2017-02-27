@@ -108,6 +108,7 @@ class SiteOrigin_Panels_Settings {
 		$defaults['home-template'] = 'home-panels.php';
 		$defaults['affiliate-id'] = apply_filters( 'siteorigin_panels_affiliate_id', false );
 		$defaults['display-teaser'] = true;
+		$defaults['display-learn'] = true;
 
 		// The general fields
 		$defaults['post-types'] = array('page', 'post');
@@ -163,8 +164,8 @@ class SiteOrigin_Panels_Settings {
 	 */
 	function admin_scripts($prefix){
 		if( $prefix != 'settings_page_siteorigin_panels' ) return;
-		wp_enqueue_style( 'siteorigin-panels-settings', plugin_dir_url(__FILE__) . '/admin-settings.css', array(), SITEORIGIN_PANELS_VERSION );
-		wp_enqueue_script( 'siteorigin-panels-settings', plugin_dir_url(__FILE__) . '/admin-settings' . SITEORIGIN_PANELS_JS_SUFFIX . '.js', array(), SITEORIGIN_PANELS_VERSION );
+		wp_enqueue_style( 'siteorigin-panels-settings', plugin_dir_url(__FILE__) . 'admin-settings.css', array(), SITEORIGIN_PANELS_VERSION );
+		wp_enqueue_script( 'siteorigin-panels-settings', plugin_dir_url(__FILE__) . 'admin-settings' . SITEORIGIN_PANELS_JS_SUFFIX . '.js', array(), SITEORIGIN_PANELS_VERSION );
 	}
 
 	/**
@@ -250,6 +251,12 @@ class SiteOrigin_Panels_Settings {
 			)
 		);
 
+		$fields['general']['fields']['display-learn'] = array(
+			'type' => 'checkbox',
+			'label' => __( 'Page Builder Learning', 'siteorigin-panels' ),
+			'description' => __( 'Display buttons for Page Builder learning.', 'siteorigin-panels' )
+		);
+
 		// The widgets fields
 
 		$fields['widgets'] = array(
@@ -306,14 +313,14 @@ class SiteOrigin_Panels_Settings {
 			'type' => 'number',
 			'unit' => 'px',
 			'label' => __('Tablet Width', 'siteorigin-panels'),
-			'description' => __('Device width, in pixels, to collapse into a tablet view .', 'siteorigin-panels'),
+			'description' => __('Device width, in pixels, to collapse into a tablet view.', 'siteorigin-panels'),
 		);
 
 		$fields['layout']['fields']['mobile-width'] = array(
 			'type' => 'number',
 			'unit' => 'px',
 			'label' => __('Mobile Width', 'siteorigin-panels'),
-			'description' => __('Device width, in pixels, to collapse into a mobile view .', 'siteorigin-panels'),
+			'description' => __('Device width, in pixels, to collapse into a mobile view.', 'siteorigin-panels'),
 		);
 
 		$fields['layout']['fields']['margin-bottom'] = array(
