@@ -1,12 +1,23 @@
 
 .site-header{
-    padding-top: 18px;
-    @include tablet{
-        padding-top: 20px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    background-color: white;
+    @include box-shadow(0 0 10px rgba(0,0,0,0.3));
+    .top-nav {
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
     }
     .logo{
         float: left;
-        margin: 0 5px 18px;
+        margin: 8px 12px 6px;
         width: 150px;
         @include tablet {
             margin: 0 5px 20px;
@@ -17,9 +28,6 @@
         float: right;
         text-align: right;
         font-size: 12px;
-        @include tablet {
-            width: 370px;
-        }
     }
     .where-to-buy{
         display: none;
@@ -31,10 +39,9 @@
 
     .language{
         position: relative;
-        margin-right: 50px;
+        float: left;
         @include tablet{
-            margin-right: 0;
-            float: right;
+            margin: 0 10px;
         }
         #lang_sel{
 
@@ -49,10 +56,10 @@
                 color: #42403a;
             }
             .lang_sel_sel{
-                display: block;
                 width: 34px;
                 height: 34px;
                 text-decoration: none;
+                display: none;
                 img{
                     width: 34px;
                 }
@@ -74,21 +81,59 @@
                     }
                 }
             }
-            .open ~ ul{
-                display: inline-block;
-            }
             ul{
-                display: none;
-                position: absolute;
-                right: 5px;
-                top: 22px;
-                margin: 15px 0;
-                width: 120px;
+                margin: 9px 10px 0 0;
+                img{
+                    width: 34px;
+                }
+                span{
+                    display: none;
+                }
                 @include tablet{
                     width: auto;
                     margin: 8px 0;
                     display: inline-block;
                     position: static;
+                    img{
+                        width: 18px;
+                    }
+                    span{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .right-rail-menu{
+        float: left;
+        padding: 11px 17px;
+        border-left: 2px solid #f7f7f7;
+        @include tablet{
+            padding: 11px 25px;
+        }
+        .site-rail-menu--toggle{
+            display: block;
+            width: 18px;
+            @include tablet{
+                width: 26px;
+            }
+            span{
+                float: right;
+                display: block;
+                height: 3px;
+                @include border-radius(1px);
+                background-color: #263238;
+                margin-top: 4px;
+                width: 100%;
+                &:first-child{
+                    margin-top: 0;
+                }
+                &:nth-child(2){
+                    width: 70%;
+                }
+                @include tablet{
+                    margin-top: 5px;
                 }
             }
         }
@@ -114,7 +159,7 @@
             }
         }
 
-        .toggle-main-menu{
+        /*.toggle-main-menu{
             width: 52px;
             height: 37px;
             padding: 5px 10px;
@@ -163,7 +208,7 @@
                     }
                 }
             }
-        }
+        }*/
 
         .main-menu-wrap{
             position: absolute;
