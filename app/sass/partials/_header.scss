@@ -13,6 +13,10 @@
             padding-right: 0;
             padding-top: 8px;
             padding-bottom: 8px;
+            @include tablet{
+                padding-top: 12px;
+                padding-bottom: 11px;
+            }
         }
     }
     .logo{
@@ -20,7 +24,7 @@
         margin: 8px 12px 6px;
         width: 150px;
         @include tablet {
-            margin: 0 5px 20px;
+            margin: 0 15px;
             width: 225px;
         }
     }
@@ -34,6 +38,7 @@
         @include tablet {
             display: block;
             float: left;
+            margin: 5px 0;
         }
     }
 
@@ -41,13 +46,16 @@
         position: relative;
         float: left;
         @include tablet{
-            margin: 0 10px;
+            margin: 5px 12px;
         }
         #lang_sel{
 
         }
         img{
             width: 18px;
+            @include tablet{
+                margin-right: 5px;
+            }
         }
         li{
             display: inline-block;
@@ -113,6 +121,7 @@
             padding: 11px 25px;
         }
         .site-rail-menu--toggle{
+            @extend .clearfix;
             display: block;
             width: 18px;
             @include tablet{
@@ -384,6 +393,11 @@
 
     .site-menu-wrapper{
         position: relative;
+        @include transition(height 0.2s linear);
+        @include desktop{
+            height: 54px;
+            overflow: hidden;
+        }
     }
 
     .submenu{
@@ -491,17 +505,10 @@
     }
 }
 
-
-
-
-.lang-vi{
-    .site-header .site-menu .main-menu {
-        > .menu-item {
-            /*padding: 6px 0;
-			
-            @include desktop {
-                padding: 12px 5px;
-            }*/
+.site-scrolling{
+    .site-menu-wrapper{
+        @include desktop{
+            height: 0;
         }
     }
 }

@@ -9,6 +9,7 @@
  */
 ?>
 
+	</div> <!-- close site-wrapper -->
 	<footer class="site-footer">
 
 		<section class="socials-network">

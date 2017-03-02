@@ -6,7 +6,20 @@
     padding-right: 0;
 }
 .site-wrapper{
+    padding-top: 55px;
     @include transition(margin 0.2s linear);
+    @include tablet{
+        padding-top: 64px;
+    }
+    @include desktop{
+        padding-top: 118px;
+    }
+}
+.site-header{
+    @include transition(padding 0.2s linear);
+    .site-header--inner{
+        @include transition(margin 0.2s linear);
+    }
 }
 
 .site-rail-menu--open{
