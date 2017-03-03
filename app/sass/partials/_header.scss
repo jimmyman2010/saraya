@@ -153,16 +153,14 @@
     .site-menu{
         background-color: #529722;
         //@include background-image(linear-gradient(#635043, #746055 42%, #877267 43%, #6b5a4f 100%));
-        @include transition(height 0.2s linear);
-        @include desktop{
-            height: 54px;
-            overflow: hidden;
-        }
         .container{
             padding-left: 0;
             padding-right: 0;
             position: relative;
             @include clearfix;
+            @include desktop{
+                position: static;
+            }
         }
         .bar{
             width: 100%;
@@ -329,7 +327,7 @@
                     }
                 }
 
-                &:hover > a, &.hover > a, &.current-menu-item > a, &.current-menu-ancestor > a{
+                &:hover > a, &.current-menu-item > a, &.current-menu-ancestor > a{
                     @include desktop {
                         &:before{
                             left: 0;
@@ -359,9 +357,17 @@
                 }
             }
 
-            .special-submenu .sub-menu{
+            .mega-menu {
                 @include desktop{
-                    display: none;
+                    position: static;
+                    &:hover{
+                        .sub-menu{
+                            display: none;
+                        }
+                        .submenu{
+                            display: block;
+                        }
+                    }
                 }
             }
 
@@ -457,7 +463,7 @@
 .site-scrolling{
     .site-menu{
         @include desktop{
-            height: 0;
+            display: none;
         }
     }
 }

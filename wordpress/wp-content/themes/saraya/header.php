@@ -75,7 +75,9 @@
 				</div>
 			</nav>
 
+			<div id="mega-menu" style="display: none;">
 			<?php echo clean_custom_menus('primary'); ?>
+			</div>
 
 		</div>
 

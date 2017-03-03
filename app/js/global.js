@@ -53,19 +53,11 @@ var DKS = (function(){
         },
 
         menuHover: function(){
-            if(method.windowWidthHeight().width >= 1024) {
-                $('.special-submenu').on('mouseover', function () {
-                    $('.submenu[data-id="' + $(this).attr('id') + '"]').show();
-                }).on('mouseleave', function () {
-                    $('.submenu[data-id="' + $(this).attr('id') + '"]').hide();
-                });
-
-                $('.submenu').on('mouseover', function () {
-                    $('#' + $(this).data('id')).addClass('hover').trigger('mouseover');
-                }).on('mouseleave', function () {
-                    $('#' + $(this).data('id')).removeClass('hover').trigger('mouseleave');
-                });
-            }
+            $('#mega-menu .submenu').each(function(){
+                var that = $(this),
+                    target = that.data('target');
+                $('.site-menu .mega-menu' + target).append(this);
+            });
         },
 
         railMenu: function(){

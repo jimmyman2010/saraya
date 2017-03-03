@@ -13,7 +13,7 @@ function clean_custom_menus($menu_name) {
 
         $menu_list = '';
         foreach ((array) $menu_items as $key => $menu_item) {
-            if(in_array('special-submenu', $menu_item->classes)){
+            if(in_array('mega-menu', $menu_item->classes)){
                 $menu_list .= clean_custom_menu_details($menu_items, $menu_item);
             }
         }
@@ -23,7 +23,7 @@ function clean_custom_menus($menu_name) {
 }
 
 function clean_custom_menu_details($menu_items, $menu_item_parent){
-    $str = '<div class="submenu" data-id="menu-item-' . $menu_item_parent->ID . '">
+    $str = '<div class="submenu" data-target=".menu-item-' . $menu_item_parent->ID . '">
             <div class="container">
                 <ul class="menu-link">
                     <li class="links">
