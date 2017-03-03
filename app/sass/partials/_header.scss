@@ -153,6 +153,11 @@
     .site-menu{
         background-color: #529722;
         //@include background-image(linear-gradient(#635043, #746055 42%, #877267 43%, #6b5a4f 100%));
+        @include transition(height 0.2s linear);
+        @include desktop{
+            height: 54px;
+            overflow: hidden;
+        }
         .container{
             padding-left: 0;
             padding-right: 0;
@@ -323,16 +328,8 @@
                         }
                     }
                 }
-                /*&:hover > a, &.current-menu-item > a, &.current-menu-ancestor > a{
-                    @include desktop {
-                        &:before{
-                            left: 0;
-                            width: 100%;
-                        }
-                    }
-                }*/
 
-                &:hover > a, &.hover > a{
+                &:hover > a, &.hover > a, &.current-menu-item > a, &.current-menu-ancestor > a{
                     @include desktop {
                         &:before{
                             left: 0;
@@ -393,11 +390,6 @@
 
     .site-menu-wrapper{
         position: relative;
-        @include transition(height 0.2s linear);
-        @include desktop{
-            height: 54px;
-            overflow: hidden;
-        }
     }
 
     .submenu{
@@ -462,51 +454,8 @@
     }
 }
 
-.slogan{
-    display: none;
-    color: #33485d;
-    @include clearfix;
-    padding: 12px;
-    @include tablet{
-        display: block;
-    }
-    .h1{
-        float: left;
-        font-size: 14px;
-        font-family: $font-bold;
-        margin: 4px 5px;
-    }
-    .connect{
-        font-family: $font-light;
-        text-align: right;
-        font-size: 14px;
-        color: #5f7080;
-        .sn{
-            line-height: 32px;
-            a{
-                display: inline-block;
-                margin: 0 0 0 5px;
-                width: 30px;
-                height: 30px;
-                text-align: center;
-                @include border-radius(23px);
-                color: white;
-            }
-            .sn--tw{
-                background-color: #64a7f5;
-            }
-            .sn--fb{
-                background-color: #3b5999;
-            }
-            .sn--in{
-                background-color: #d0011b;
-            }
-        }
-    }
-}
-
 .site-scrolling{
-    .site-menu-wrapper{
+    .site-menu{
         @include desktop{
             height: 0;
         }

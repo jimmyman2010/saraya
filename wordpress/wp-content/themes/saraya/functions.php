@@ -325,6 +325,7 @@ require get_template_directory() . '/inc/admin-settings.php';
 require get_template_directory() . '/inc/random-widget.php';
 require get_template_directory() . '/inc/history-widget.php';
 require get_template_directory() . '/inc/custom_wp_nav_menu.php';
+require get_template_directory() . '/inc/custom_register_sidebar.php';
 
 /**
  * Disabling WPML�s CSS and JS files

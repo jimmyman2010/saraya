@@ -40,14 +40,14 @@ function register_dickinsons_settings() {
     //register header settings
     register_setting( 'dickinsons-settings-header', 'slogan_en' );
     register_setting( 'dickinsons-settings-header', 'slogan_vi' );
+    register_setting( 'dickinsons-settings-header', 'latest_news_en' );
+    register_setting( 'dickinsons-settings-header', 'latest_news_vi' );
+    register_setting( 'dickinsons-settings-header', 'latest_news_link_en' );
+    register_setting( 'dickinsons-settings-header', 'latest_news_link_vi' );
     register_setting( 'dickinsons-settings-header', 'where_to_buy_en' );
     register_setting( 'dickinsons-settings-header', 'where_to_buy_vi' );
     register_setting( 'dickinsons-settings-header', 'where_to_buy_link_en' );
     register_setting( 'dickinsons-settings-header', 'where_to_buy_link_vi' );
-
-    //register sidebar settings
-    register_setting( 'dickinsons-settings-sidebar', 'our_products_en' );
-    register_setting( 'dickinsons-settings-sidebar', 'our_products_vi' );
 
     //register subscribe settings
     register_setting( 'dickinsons-settings-subscribe', 'subscribe_en' );
@@ -112,6 +112,24 @@ function dickinsons_settings_page() {
                 </thead>
                 <tbody>
                     <tr valign="top" class="slogan">
+                        <th scope="row">Latest news</th>
+                        <td>
+                            <input type="text" id="latest_news_en" name="latest_news_en" value="<?php echo trim( get_option('latest_news_en') ); ?>"/>
+                        </td>
+                        <td>
+                            <input type="text" id="latest_news_vi" name="latest_news_vi" value="<?php echo trim( get_option('latest_news_vi') ); ?>"/>
+                        </td>
+                    </tr>
+                    <tr valign="top" class="slogan">
+                        <th scope="row">Latest news link</th>
+                        <td>
+                            <input type="text" id="latest_news_link_en" name="latest_news_link_en" value="<?php echo trim( get_option('latest_news_link_en') ); ?>"/>
+                        </td>
+                        <td>
+                            <input type="text" id="latest_news_link_vi" name="latest_news_link_vi" value="<?php echo trim( get_option('latest_news_link_vi') ); ?>"/>
+                        </td>
+                    </tr>
+                    <tr valign="top" class="slogan">
                         <th scope="row">Where to buy</th>
                         <td>
                             <input type="text" id="where_to_buy_en" name="where_to_buy_en" value="<?php echo trim( get_option('where_to_buy_en') ); ?>"/>
@@ -138,42 +156,6 @@ function dickinsons_settings_page() {
                             <textarea id="slogan_vi" name="slogan_vi"><?php echo trim( get_option('slogan_vi') ); ?></textarea>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-
-            <?php submit_button(); ?>
-
-        </form>
-
-        <hr>
-        <h2>Sidebar</h2>
-
-        <form method="post" action="options.php">
-            <?php settings_fields( 'dickinsons-settings-sidebar' ); ?>
-            <?php do_settings_sections( 'dickinsons-settings-sidebar' ); ?>
-            <table class="form-table my-settings">
-                <colgroup>
-                    <col width="12%"/>
-                    <col width="44%"/>
-                    <col width="44%"/>
-                </colgroup>
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>English</th>
-                    <th>Vietnamese</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr valign="top" class="contacts">
-                    <th scope="row">Our Products</th>
-                    <td>
-                        <textarea id="our_products_en" name="our_products_en"><?php echo trim( get_option('our_products_en') ); ?></textarea>
-                    </td>
-                    <td>
-                        <textarea id="our_products_vi" name="our_products_vi"><?php echo trim( get_option('our_products_vi') ); ?></textarea>
-                    </td>
-                </tr>
                 </tbody>
             </table>
 

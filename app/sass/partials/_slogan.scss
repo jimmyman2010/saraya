@@ -1,0 +1,93 @@
+
+
+.slogan {
+    @include clearfix;
+    color: #33485d;
+    text-align: left;
+    .h1 {
+        font-size: 14px;
+        font-family: $font-bold;
+        margin: 6px 5px;
+        a{
+            color: inherit;
+        }
+    }
+    .connect {
+        font-family: $font-light;
+        font-size: 14px;
+        color: #5f7080;
+        .sn {
+            line-height: 32px;
+            a {
+                display: inline-block;
+                margin: 0 0 0 5px;
+                width: 30px;
+                height: 30px;
+                line-height: 34px;
+                text-align: center;
+                @include border-radius(23px);
+                color: whitesmoke;
+            }
+            .sn--tw {
+                background-color: #64a7f5;
+            }
+            .sn--fb {
+                background-color: #3b5999;
+            }
+            .sn--in {
+                background-color: #d0011b;
+            }
+        }
+    }
+}
+
+.site-wrapper {
+    .slogan{
+        display: none;
+        padding: 12px;
+        @include tablet {
+            display: block;
+        }
+        .h1{
+            float: left;
+        }
+        .connect {
+            text-align: right;
+        }
+    }
+}
+
+.site-rail-menu{
+    .h1 {
+        border-top: 2px solid #555;
+        a {
+            display: inline-block;
+            color: whitesmoke;
+            padding: 24px 16px;
+        }
+    }
+    .button{
+        height: 46px;
+        line-height: 46px;
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+    .connect{
+        font-size: 16px;
+        max-width: 80%;
+        color: #c5c5c5;
+        margin-top: 80px;
+        padding-left: 16px;
+        .sn{
+            display: block;
+            margin-top: 20px;
+            margin-left: -5px;
+            a{
+                width: 36px;
+                height: 36px;
+                line-height: 38px;
+            }
+        }
+    }
+}
