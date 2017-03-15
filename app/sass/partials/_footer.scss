@@ -3,14 +3,14 @@
     @include tablet {
         margin-top: 30px;
     }
-    .bar{
+    /*.bar{
         width: 100%;
         height: 8px;
         background-color: $color-yellow;
         @include desktop{
             height: 14px;
         }
-    }
+    }*/
 
     .subscribe{
         .subscribe-form{
@@ -262,16 +262,3 @@
     }
 }
 
-
-
-.yellow-template{
-    .bar{
-        background-color: $color-yellow;
-    }
-}
-
-.blue-template{
-    .bar{
-        background-color: $color-blue;
-    }
-}
