@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.1.1');
+define('VERSION', '1.0.1.2');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
@@ -71,11 +71,12 @@ function dickinsons_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 200, 140 );
+	set_post_thumbnail_size( 400, 260, true );
 
 	add_image_size('thumb_footer', 90, 90, true);
 	add_image_size('thumb_menu', 130, 130, true);
 	add_image_size('banner', 1200, 350, true);
+	add_image_size('thumb_section', 400, 260, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -103,15 +104,15 @@ function dickinsons_setup() {
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
+//		'aside',
 		'image',
-		'video',
-		'quote',
-		'link',
-		'gallery',
-		'status',
-		'audio',
-		'chat',
+//		'video',
+//		'quote',
+//		'link',
+//		'gallery',
+//		'status',
+//		'audio',
+//		'chat',
 	) );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
@@ -326,6 +327,7 @@ require get_template_directory() . '/inc/random-widget.php';
 require get_template_directory() . '/inc/history-widget.php';
 require get_template_directory() . '/inc/custom_wp_nav_menu.php';
 require get_template_directory() . '/inc/custom_register_sidebar.php';
+require get_template_directory() . '/inc/my-shortcode.php';
 
 /**
  * Disabling WPML�s CSS and JS files

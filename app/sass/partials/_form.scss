@@ -166,7 +166,9 @@
     @include border-radius(50px);
     @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
     text-decoration: none !important;
+    text-transform: uppercase;
     min-width: 145px;
+    background-color: $color-green;
     &:hover{
         @include opacity(0.9);
     }
@@ -184,7 +186,7 @@
 }
 
 .button--large{
-    font-size: 14px;
+    font-size: 13px;
     height: 45px;
     line-height: 45px;
     padding: 0 25px;
@@ -192,32 +194,18 @@
 
 .button--small{
     font-size: 11px;
-    height: 25px;
-    line-height: 25px;
-}
-
-.button--red{
-    background-color: #ff3737;
-}
-
-.button--yellow{
-    background-color: #efbc00;
 }
 
 .button--blue{
-    background-color: #119EBC;
-}
-
-.button--light-blue{
-    background-color: #4099FF;
+    background-color: $color-blue;
 }
 
 .button--orange{
-    background-color: #EB9F12;
+    background-color: $color-orange;
 }
 
 .button--teal{
-    background-color: #18AEB1;
+    background-color: $color-teal;
 }
 
 .button--gray{
@@ -226,15 +214,15 @@
 }
 
 .button--green{
-    background-color: #519721;
+
 }
 
 .button--light-green{
-    background-color: #E5F3DC;
+    background-color: $color-light-green;
 }
 
 .button--pink{
-    background-color: #F5AFAB;
+    background-color: $color-pink;
 }
 
 .button--none{

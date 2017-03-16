@@ -162,65 +162,6 @@
                 position: static;
             }
         }
-        /*.bar{
-            width: 100%;
-            height: 8px;
-            background-color: $color-yellow;
-            @include desktop{
-                height: 14px;
-            }
-        }*/
-
-        /*.toggle-main-menu{
-            width: 52px;
-            height: 37px;
-            padding: 5px 10px;
-            position: absolute;
-            right: 10px;
-            top: -50px;
-            span{
-                float: right;
-                height: 4px;
-                margin: 2px 0 3px;
-                background-color: black;
-                @include border-radius(1px);
-                width: 24px;
-                clear: right;
-                &:nth-child(2){
-                    width: 18px;
-                }
-            }
-            @include tablet{
-                position: static;
-                float: right;
-                span{
-                    background-color: white;
-                }
-            }
-            @include desktop{
-                display: none;
-            }
-
-            &.open {
-                span{
-                    &:nth-child(1){
-                        @include transform(rotate(43deg) translate(8px, 6px));
-                    }
-                    &:nth-child(2){
-                        width: 0;
-                    }
-                    &:nth-child(3){
-                        @include transform(rotate(-47deg) translate(7px, -5px));
-                    }
-                }
-                ~ .main-menu-wrap .main-menu {
-                    padding: 0 15px;
-                    > .menu-item {
-                        display: block;
-                    }
-                }
-            }
-        }*/
 
         .main-menu-wrap{
             position: absolute;

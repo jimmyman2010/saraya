@@ -1,72 +1,102 @@
 .left-rail{
     @include desktop {
         float: left;
-        width: 240px;
+        width: 270px;
     }
 }
 
 .blog-content{
     @include desktop {
         float: right;
-        width: 690px;
+        width: 670px;
     }
 
     .item{
         margin: 15px 0 50px;
         @extend .clearfix;
 
+        h3{
+            font-family: $font-regular;
+            font-weight: normal;
+            font-size: 26px;
+            line-height: 1.1;
+            margin: 0 0 12px;
+            a{
+                color: #529720;
+            }
+        }
+
         .details{
-            line-height: 1.5;
-            color: #6f4b45;
-            h2{
-                font-weight: 400;
-                font-size: 20px;
-                margin: 0;
-                a{
-                    color: #001b5d;
-                    &:hover{
-                        text-decoration: none;
-                        color: #6f4b45;
-                    }
-                }
+            .more{
+                margin-top: 10px;
             }
-            .meta{
-                margin: 12px 0;
-                font-size: 14px;
-                span{
-                    color: #e9b700;
-                }
-                a{
-                    text-decoration: underline;
-                }
+        }
+        .meta{
+            border-top: 1px solid #eceaeb;
+            color: #ccc;
+            margin: 18px 0 15px;
+            padding-top: 16px;
+            font-size: 14px;
+            span{
+                color: #31363c;
+                display: inline-block;
+                margin: 0 10px;
             }
-            .summary{
-                p{
-                    display: inline;
+            a{
+                text-decoration: underline;
+            }
+            i{
+                margin-right: 8px;
+            }
+        }
+        .tags{
+            background-color: #e5f3dc;
+            padding: 4px 8px;
+            @include border-radius(10px);
+            @include tablet {
+                @include border-radius(30px);
+            }
+            i{
+                color: #529722;
+                margin: 0 5px;
+            }
+            a{
+                display: inline-block;
+                padding: 3px 15px 2px;
+                background-color: white;
+                margin: 5px;
+                color: #31353e;
+                @include border-radius(20px);
+                &:hover{
+                    background-color: #b8d6a4;
+                    text-decoration: none;
                 }
             }
         }
     }
 
     .has-thumbnail{
-        position: relative;
-        @include tablet {
-            padding-left: 225px;
-        }
-        figure{
-            text-align: center;
+        .details {
             @include tablet {
-                position: absolute;
-                left: 0;
-                top: 5px;
-                width: 200px;
+                position: relative;
+                min-height: 152px;
+                padding-left: 250px;
             }
+            figure {
+                text-align: center;
+                @include tablet {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 230px;
+                }
 
-            figcaption{
-                padding: 10px 0;
-                font-size: 14px;
-                line-height: 1.2;
-                color: #e9b700;
+                figcaption {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    line-height: 1.2;
+                    color: #e9b700;
+                }
             }
         }
     }
@@ -206,7 +236,6 @@
 
 .body{
     @include clearfix;
-    line-height: 1.5;
     color: #34393F;
     font-size: 15px;
     @include tablet{
@@ -271,7 +300,7 @@
 
     h1{
         font-size: 36px;
-        line-height: 1.2;
+        line-height: 1;
         @include tablet {
             &.hero {
                 font-size: 46px;
@@ -280,7 +309,7 @@
     }
     h2{
         font-size: 20px;
-        line-height: 1.2;
+        line-height: 1;
         @include tablet {
             font-size: 26px;
         }
@@ -306,9 +335,42 @@
 
     .button{
         margin: 0 5px 20px;
+        &:first-child{
+            margin-left: 0;
+        }
         @include tablet{
             margin-bottom: 10px;
         }
     }
 }
 
+.bar{
+    position: relative;
+    span{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        background-color: black;
+        top: -33px;
+        left: 0;
+    }
+    .color--green{
+        background-color: $color-green;
+    }
+    .color--light-green{
+        background-color: $color-light-green;
+    }
+    .color--teal{
+        background-color: $color-teal;
+    }
+    .color--blue{
+        background-color: $color-blue;
+    }
+    .color--orange{
+        background-color: $color-orange;
+    }
+    .color--pink{
+        background-color: $color-pink;
+    }
+}

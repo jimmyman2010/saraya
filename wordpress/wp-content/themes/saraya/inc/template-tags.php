@@ -80,7 +80,7 @@ function dickinsons_entry_date($id = null, $eco = true) {
 
 	}
 	if($eco) {
-		printf('%1$s <span>%2$s</span>',
+		printf('%1$s <span><i class="fa fa-calendar"></i>%2$s</span>',
 			get_option('posted_on_' . ICL_LANGUAGE_CODE),
 			$time_string
 		);
@@ -131,7 +131,7 @@ if ( ! function_exists( 'dickinsons_entry_tag' ) ) :
 	 * @since Twenty Sixteen 1.0
 	 */
 	function dickinsons_entry_tag($has_label = true) {
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
+		$tags_list = get_the_tag_list();
 		if ( $tags_list ) {
 			if($has_label) {
 				printf('<span>%1$s </span>%2$s',
@@ -157,7 +157,7 @@ if ( ! function_exists( 'dickinsons_entry_category' ) ) :
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
 		if ( $categories_list && dickinsons_categorized_blog() ) {
 
-			printf(get_option('posted_in_' . ICL_LANGUAGE_CODE) . ' %1$s', $categories_list);
+			printf(get_option('posted_in_' . ICL_LANGUAGE_CODE) . '<i class="fa fa-archive"></i>%1$s', $categories_list);
 		}
 	}
 endif;
@@ -210,12 +210,17 @@ if ( ! function_exists( 'dickinsons_excerpt' ) ) :
 	function dickinsons_excerpt( $class = 'summary' ) {
 		$class = esc_attr( $class );
 
-		if ( has_excerpt() || is_search() ) : ?>
+		if ( has_excerpt() ) { ?>
 			<div class="<?php echo $class; ?>">
 				<?php the_excerpt(); ?>
-				<a href="<?= esc_url( get_permalink() ) ?>" class="read-more">more &raquo;</a>
+				<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
 			</div>
-		<?php endif;
+		<?php } else { ?>
+			<div class="<?php echo $class; ?>">
+				<?php echo wp_trim_words( get_the_content(), 40, '...' ); ?>
+				<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+			</div>
+		<?php }
 	}
 endif;
 
