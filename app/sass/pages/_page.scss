@@ -125,7 +125,7 @@
         @extend .clearfix;
         .page-numbers{
             display: inline-block;
-            width: 30px;
+            width: 10px;
             height: 30px;
             color: #494f5d;
             line-height: 30px;
@@ -137,6 +137,9 @@
             &:hover{
                 @include opacity(1);
             }
+            @include tablet{
+                width: 30px;
+            }
         }
         .current{
             text-decoration: underline;
@@ -146,7 +149,7 @@
             width: auto;
             font-size: 12px;
             line-height: 2em;
-            padding: 0 20px;
+            margin: 0;
             position: relative;
             &:hover{
                 text-decoration: none;
@@ -159,12 +162,14 @@
         }
         .prev{
             float: left;
+            padding-left: 20px;
             i{
                 left: 0;
             }
         }
         .next{
             float: right;
+            padding-right: 20px;
             i{
                 right: 0;
             }

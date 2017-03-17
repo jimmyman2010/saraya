@@ -6,13 +6,13 @@
     padding-right: 0;
 }
 .site-wrapper{
+    @include transition(margin 0.2s linear, padding 0.2s linear);
     padding-top: 55px;
-    @include transition(margin 0.2s linear);
-    @include tablet{
-        padding-top: 64px;
+    @include tablet {
+        padding-top: 67px;
     }
-    @include desktop{
-        padding-top: 118px;
+    @include desktop {
+        padding-top: 124px;
     }
 }
 .site-header{
