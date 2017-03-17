@@ -20,8 +20,8 @@
 		</div>
 	</div>
 
-	<div class="meta"><?php dickinsons_entry_date(); ?> | <?php dickinsons_entry_category(); ?></div>
-	<div class="tags"><i class="fa fa-tag"></i><?php dickinsons_entry_tag(false); ?></div>
+	<div class="meta"><?php dickinsons_entry_date(); ?><span class="separate">|</span><?php dickinsons_entry_category(); ?></div>
+	<div class="tags"><?php dickinsons_entry_tag(false); ?></div>
 </article>
 
 

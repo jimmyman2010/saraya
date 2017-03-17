@@ -213,8 +213,20 @@
     color: black !important;
 }
 
-.button--green{
+.button--white{
+    background-color: white;
+    color: #394e63 !important;
+    border: 1px solid #d9d9d9;
+}
 
+.button--where-to-buy{
+    background-color: #ff3737;
+    &:before{
+        content: '\f07a';
+        margin-right: 10px;
+        font: $font-awesome;
+        font-size: 1.2em;
+    }
 }
 
 .button--light-green{

@@ -18,7 +18,7 @@
         </div>
         <div class="site-breadcrumb">
             <div class="container">
-                <ul class="breadcrumbs"><li><span class="divider">»</span><a href="http://saraya.dev">Home</a></li></ul>		</div>
+                <ul class="breadcrumbs"><li><span class="divider">Â»</span><a href="http://saraya.dev">Home</a></li></ul>		</div>
         </div>
 
 
@@ -36,51 +36,21 @@
                     <include src="inc/blog-item-thumb.html"></include>
 
 
-
+                    <nav class="navigation pagination" role="navigation">
+                        <h2 class="screen-reader-text">Posts navigation</h2>
+                        <div class="nav-links">
+                            <a class="prev page-numbers" href="http://saraya.dev/blog/"><i class="fa fa-angle-left"></i> PREVIOUS</a>
+                            <span class="page-numbers current">1</span>
+                            <a class="page-numbers" href="http://saraya.dev/blog/page/2/">2</a>
+                            <a class="next page-numbers" href="http://saraya.dev/blog/page/2/">NEXT <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </nav>
 
 
                 </section>
 
 
-                <aside class="left-rail" role="complementary">
-                    <div id="search-2" class="module module--widget_search">
-                        <form role="search" method="get" class="search-form" action="http://saraya.dev/">
-                            <label>
-                                <span class="screen-reader-text">Search for:</span>
-                                <input type="search" class="search-field" placeholder="Search …" value="" name="s">
-                            </label>
-                            <button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
-                        </form>
-                    </div>		<div id="recent-posts-2" class="module module--widget_recent_entries">		<h3 class="module--title">Recent Posts</h3>		<ul>
-                    <li>
-                        <a href="http://saraya.dev/the-standard-chunk-of-lorem-ipsum-used-since-the-1500s/">The standard chunk of Lorem Ipsum used since the 1500s</a>
-                    </li>
-                    <li>
-                        <a href="http://saraya.dev/contrary-to-popular-belief-lorem-ipsum-is-not-simply-random-text/">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
-                    </li>
-                    <li>
-                        <a href="http://saraya.dev/there-are-many-variations-of-passages-of/">There are many variations of passages of</a>
-                    </li>
-                    <li>
-                        <a href="http://saraya.dev/hello-world/">Hello world!</a>
-                    </li>
-                </ul>
-                </div>		<div id="recent-comments-2" class="module module--widget_recent_comments"><h3 class="module--title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="https://wordpress.org/" rel="external nofollow" class="url">A WordPress Commenter</a></span> on <a href="http://saraya.dev/hello-world/#comment-1">Hello world!</a></li></ul></div><div id="archives-2" class="module module--widget_archive"><h3 class="module--title">Archives</h3>		<ul>
-                    <li><a href="http://saraya.dev/2017/03/">March 2017</a></li>
-                    <li><a href="http://saraya.dev/2016/09/">September 2016</a></li>
-                </ul>
-                </div><div id="categories-2" class="module module--widget_categories"><h3 class="module--title">Categories</h3>		<ul>
-                    <li class="cat-item cat-item-1"><a href="http://saraya.dev/category/uncategorized/">Uncategorized</a>
-                    </li>
-                </ul>
-                </div><div id="meta-2" class="module module--widget_meta"><h3 class="module--title">Meta</h3>			<ul>
-                    <li><a href="http://saraya.dev/wp-admin/">Site Admin</a></li>			<li><a href="http://saraya.dev/wp-login.php?action=logout&amp;_wpnonce=dee8a20bdb">Log out</a></li>
-                    <li><a href="http://saraya.dev/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="http://saraya.dev/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
-                </div>
-
-                </aside>
+                <include src="inc/left-rail.html"></include>
 
 
             </div>

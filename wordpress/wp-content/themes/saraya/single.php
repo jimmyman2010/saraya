@@ -27,10 +27,28 @@ get_header(); ?>
 		</div>
 	</div>
 
-
 	<div class="main-container">
-		<div class="container clearfix">
 
+		<header class="single-title">
+			<div class="container">
+				<div class="body">
+					<?php the_secondary_title(null, '<h2>', '</h2>'); ?>
+					<?php the_title( '<h1>', '</h1>' ); ?>
+				</div>
+				<div class="meta">
+					<span class="tags"><?php dickinsons_entry_tag(false); ?></span><span class="separate">|</span><?php dickinsons_entry_date(); ?>
+				</div>
+			</div>
+			<div class="excerpt">
+				<div class="container">
+					<div class="body">
+						<?php dickinsons_excerpt('', 50) ?>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container clearfix">
 			<section class="blog-content" role="main">
 
 				<?php
