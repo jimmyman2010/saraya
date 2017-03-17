@@ -37,6 +37,13 @@
 		<section class="footer--info">
 			<div class="container">
 				<div class="three-column">
+
+					<div class="latest-news">
+						<?php echo dickinsons_recent_post(); ?>
+						<a href="<?= get_option('all_articles_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--green">
+							<?= get_option('all_articles_' . ICL_LANGUAGE_CODE) ?>
+						</a>
+					</div>
 					<div class="information">
 						<h3><?= get_option('information_' . ICL_LANGUAGE_CODE) ?></h3>
 						<?php
@@ -50,13 +57,6 @@
 					</div>
 					<div class="contact">
 						<?= get_option('contact_' . ICL_LANGUAGE_CODE) ?>
-					</div>
-
-					<div class="latest-news">
-						<?php echo dickinsons_recent_post(); ?>
-						<a href="<?= get_option('all_articles_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--green">
-							<?= get_option('all_articles_' . ICL_LANGUAGE_CODE) ?>
-						</a>
 					</div>
 				</div>
 
