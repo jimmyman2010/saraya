@@ -264,6 +264,7 @@
 
 .single-title{
     text-align: center;
+    margin-bottom: 30px;
 
     .body{
         @include tablet {
@@ -313,10 +314,10 @@
             }
         }
     }
+
     .excerpt{
         background-color: #e5f3dc;
         padding: 20px 0;
-        margin-bottom: 25px;
         .more{
             margin-top: 20px;
         }
