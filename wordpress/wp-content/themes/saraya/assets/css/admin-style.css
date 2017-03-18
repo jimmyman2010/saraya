@@ -1,0 +1,15 @@
+.my-settings th{
+    padding: 20px 10px 0;
+}
+.my-settings textarea, .my-settings [type="text"]{
+    width: 100%;
+}
+.my-settings .slogan textarea{
+    height: 250px;
+}
+.my-settings .contacts textarea{
+    height: 400px;
+}
+.my-settings .copyright textarea{
+    height: 100px;
+}
