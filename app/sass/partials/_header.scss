@@ -117,13 +117,10 @@
         float: left;
         padding: 11px 17px;
         border-left: 2px solid #f7f7f7;
-        @include tablet{
-            padding: 11px 25px;
-        }
         .site-rail-menu--toggle{
-            @extend .clearfix;
             display: block;
             width: 18px;
+            @extend .clearfix;
             @include tablet{
                 width: 26px;
             }
@@ -180,6 +177,7 @@
             background-color: #529722;
             @include desktop{
                 background-color: transparent;
+                float: left;
             }
 
             > .menu-item{
@@ -330,6 +328,18 @@
                         content: "\f078";
                     }
                 }
+            }
+        }
+
+        .search-form--toggle{
+            color: white;
+            display: none;
+            font-size: 24px;
+            padding: 13px 16px 8px;
+            border-left: 1px solid #fff;
+            @include desktop{
+                float: right;
+                display: block;
             }
         }
 

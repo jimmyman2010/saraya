@@ -61,6 +61,10 @@ var DKS = (function(){
         },
 
         railMenu: function(){
+            $('.search-form--toggle').on('click', function(){
+                $('.site-container').addClass('site-rail-menu--open');
+                $('.site-rail-menu input[type="search"]').focus();
+            });
             $('.site-rail-menu--toggle').on('click', function(){
                 $('.site-container').toggleClass('site-rail-menu--open');
             });
