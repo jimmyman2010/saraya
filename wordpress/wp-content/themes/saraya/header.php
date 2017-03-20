@@ -71,6 +71,8 @@
 							) );
 
 						} ?>
+
+						<a class="search-form--toggle" href="javascript:void(0);"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
 			</nav>

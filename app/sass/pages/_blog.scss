@@ -14,6 +14,9 @@
     .item{
         margin: 15px 0 50px;
         @extend .clearfix;
+        &:first-child{
+            margin-top: 0;
+        }
 
         h3{
             font-family: $font-regular;
@@ -261,6 +264,7 @@
 
 .single-title{
     text-align: center;
+    margin-bottom: 30px;
 
     .body{
         @include tablet {
@@ -310,10 +314,10 @@
             }
         }
     }
+
     .excerpt{
         background-color: #e5f3dc;
         padding: 20px 0;
-        margin-bottom: 25px;
         .more{
             margin-top: 20px;
         }
