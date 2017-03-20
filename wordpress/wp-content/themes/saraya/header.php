@@ -31,58 +31,59 @@
 	<?php get_sidebar('rightHandRail'); ?>
 
 	<header class="site-header">
-		<div class="top-nav">
-			<div class="container clearfix">
-				<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
-				<div class="meta-info">
-					<div class="where-to-buy">
-						<a href="<?= get_option('where_to_buy_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--red"><i class="fa fa-shopping-cart"></i> &nbsp; <?= get_option('where_to_buy_' . ICL_LANGUAGE_CODE) ?></a>
+		<div class="site-header--inner">
+			<div class="top-nav">
+				<div class="container clearfix">
+					<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+					<div class="meta-info">
+						<div class="where-to-buy">
+							<a href="<?= get_option('where_to_buy_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--red"><i class="fa fa-shopping-cart"></i> &nbsp; <?= get_option('where_to_buy_' . ICL_LANGUAGE_CODE) ?></a>
+						</div>
+						<div class="language">
+							<?php do_action('icl_language_selector'); ?>
+						</div>
+						<div class="right-rail-menu">
+							<a class="site-rail-menu--toggle" href="javascript:void(0);">
+								<span></span>
+								<span></span>
+								<span></span>
+							</a>
+						</div>
 					</div>
-					<div class="language">
-						<?php do_action('icl_language_selector'); ?>
-					</div>
-					<div class="right-rail-menu">
-						<a class="site-rail-menu--toggle" href="javascript:void(0);">
+				</div>
+			</div>
+
+			<div class="site-menu-wrapper">
+
+				<nav class="site-menu">
+					<div class="container">
+						<a href="javascript:void(0);" class="toggle-main-menu">
 							<span></span>
 							<span></span>
 							<span></span>
 						</a>
+						<div class="main-menu-wrap">
+							<?php
+							if ( has_nav_menu( 'primary' ) ) {
+								wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'menu_class' => 'main-menu',
+									'container' => 'ul'
+								) );
+
+							} ?>
+
+							<a class="search-form--toggle" href="javascript:void(0);"><i class="fa fa-search"></i></a>
+						</div>
 					</div>
+				</nav>
+
+				<div id="mega-menu" style="display: none;">
+				<?php echo clean_custom_menus('primary'); ?>
 				</div>
+
 			</div>
 		</div>
-
-		<div class="site-menu-wrapper">
-
-			<nav class="site-menu">
-				<div class="container">
-					<a href="javascript:void(0);" class="toggle-main-menu">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-					<div class="main-menu-wrap">
-						<?php
-						if ( has_nav_menu( 'primary' ) ) {
-							wp_nav_menu( array(
-								'theme_location' => 'primary',
-								'menu_class' => 'main-menu',
-								'container' => 'ul'
-							) );
-
-						} ?>
-
-						<a class="search-form--toggle" href="javascript:void(0);"><i class="fa fa-search"></i></a>
-					</div>
-				</div>
-			</nav>
-
-			<div id="mega-menu" style="display: none;">
-			<?php echo clean_custom_menus('primary'); ?>
-			</div>
-
-		</div>
-
 
 	</header>
 
