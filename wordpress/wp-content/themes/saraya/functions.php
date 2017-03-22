@@ -322,6 +322,7 @@ require get_template_directory() . '/inc/remove-meta.php';
 require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
 require get_template_directory() . '/inc/post-history.php';
+require get_template_directory() . '/inc/post-product.php';
 require get_template_directory() . '/inc/admin-settings.php';
 require get_template_directory() . '/inc/random-widget.php';
 require get_template_directory() . '/inc/history-widget.php';
