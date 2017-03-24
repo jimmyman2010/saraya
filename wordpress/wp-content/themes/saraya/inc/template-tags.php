@@ -157,7 +157,7 @@ if ( ! function_exists( 'dickinsons_entry_category' ) ) :
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
 		if ( $categories_list && dickinsons_categorized_blog() ) {
 
-			printf(get_option('posted_in_' . ICL_LANGUAGE_CODE) . '<i class="fa fa-archive"></i>%1$s', $categories_list);
+			printf('<span>' . get_option('posted_in_' . ICL_LANGUAGE_CODE) . '<i class="fa fa-archive"></i>%1$s</span>', $categories_list);
 		}
 	}
 endif;

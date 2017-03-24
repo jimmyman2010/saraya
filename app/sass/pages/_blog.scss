@@ -43,9 +43,13 @@
             span{
                 color: #31363c;
                 display: block;
+                margin: 0 10px;
+                position: relative;
+                padding-left: 26px;
                 @include tablet {
                     display: inline-block;
-                    margin: 0 10px;
+                    vertical-align: top;
+                    padding-left: 30px;
                 }
             }
             .separate{
@@ -60,20 +64,33 @@
                 text-decoration: underline;
             }
             i{
-                margin-right: 8px;
                 color: #31363c;
+                position: absolute;
+                left: 0;
+                @include tablet{
+                    left: 3px;
+                }
             }
         }
         .tags{
             background-color: #e5f3dc;
-            padding: 4px 8px;
+            padding: 4px 8px 4px 30px;
+            position: relative;
             @include border-radius(10px);
             @include tablet {
                 @include border-radius(30px);
+                padding-left: 35px;
             }
             i{
                 color: #529722;
                 margin: 0 5px;
+                position: absolute;
+                top: 10px;
+                left: 7px;
+                @include tablet{
+                    top: 12px;
+                    left: 10px;
+                }
             }
             a{
                 font-size: 14px;
