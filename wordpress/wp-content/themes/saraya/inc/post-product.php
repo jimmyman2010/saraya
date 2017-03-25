@@ -21,9 +21,59 @@ function saraya_product() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'product'),
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt'
+            )
         )
     );
 }
+
+
+add_action( 'init', 'saraya_product_category' );
+function saraya_product_category() {
+    // create a new taxonomy
+    register_taxonomy(
+        'brand',
+        'product',
+        array(
+            'label'              => __('Brand'),
+            'labels' => array(
+                'add_new_item'        => __( 'Add New Brand' )
+            ),
+            'rewrite' => array( 'slug' => 'brand' ),
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'product_type',
+        'product',
+        array(
+            'label'              => __('Product Type'),
+            'labels' => array(
+                'add_new_item'        => __( 'Add New Type' )
+            ),
+            'rewrite' => array( 'slug' => 'product-type' ),
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'market_segment',
+        'product',
+        array(
+            'label'              => __('Market Segment'),
+            'labels' => array(
+                'add_new_item'        => __( 'Add New Market Segment' )
+            ),
+            'rewrite' => array( 'slug' => 'market-segment' ),
+            'hierarchical' => true
+        )
+    );
+}
+
+
+
 
 // Main function to get quotes
 function get_all_product() {
