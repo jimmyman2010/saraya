@@ -81,6 +81,13 @@ function saraya_market_segment(){
     }
 }
 
+function saraya_product_type(){
+    $marketSegments = get_the_terms(null, 'product_type');
+    foreach ( $marketSegments as $item ) {
+        echo '<a style="background-color: ' . get_field('colour', $item) . '" href="' . get_term_link($item, 'market_segment') . '">' . $item->name . '</a>';
+    }
+}
+
 
 // Main function to get quotes
 function get_all_product() {

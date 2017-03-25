@@ -9,7 +9,7 @@
 
 
 <div class="product-title body">
-	<?php echo '<h2>Product type</h2>' ?>
+	<h2><?php saraya_product_type(); ?></h2>
 	<?php the_title( '<h1>', '</h1>' ); ?>
 	<div class="tags--market-segment"><?php saraya_market_segment(); ?></div>
 	<?php dickinsons_excerpt('', 5000, false) ?>
