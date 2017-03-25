@@ -172,9 +172,6 @@
     &:hover{
         @include opacity(0.9);
     }
-}
-
-.button--icon{
     i{
         margin-right: 7px;
     }

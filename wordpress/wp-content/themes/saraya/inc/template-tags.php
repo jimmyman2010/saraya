@@ -207,18 +207,22 @@ if ( ! function_exists( 'dickinsons_excerpt' ) ) :
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
-	function dickinsons_excerpt( $class = 'summary', $limit = 35 ) {
+	function dickinsons_excerpt( $class = 'summary', $limit = 35, $show_read_more = true ) {
 		$class = esc_attr( $class );
 
 		if ( has_excerpt() ) { ?>
 			<div class="<?php echo $class; ?>">
 				<?php  echo wp_trim_words( get_the_excerpt(), $limit, '...' ); ?>
-				<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+				<?php if($show_read_more) { ?>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+				<?php } ?>
 			</div>
 		<?php } else { ?>
 			<div class="<?php echo $class; ?>">
 				<?php echo wp_trim_words( get_the_content(), $limit, '...' ); ?>
-				<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+				<?php if($show_read_more) { ?>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+				<?php } ?>
 			</div>
 		<?php }
 	}

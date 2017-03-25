@@ -1,0 +1,48 @@
+.product-title{
+    h2{
+        color: $color-green;
+        margin-bottom: 10px;
+    }
+}
+
+.product-details{
+    margin: 30px 0;
+    ul{
+        background-color: #e5f3dc;
+        padding: 10px 0;
+        @include border-radius(10px);
+        @include tablet{
+            padding: 10px 20px;
+        }
+    }
+    li{
+        border-top: 1px solid white;
+        padding: 5px 20px;
+        &:first-child{
+            border-top: none;
+        }
+        &:before{
+            display: none;
+        }
+        @include tablet {
+            padding: 5px 0 5px 160px;
+            position: relative;
+            border-top: none;
+        }
+        strong{
+            display: block;
+            @include tablet {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                max-width: 150px;
+            }
+        }
+    }
+}
+
+.extra-link{
+    border-top: 1px solid #d9d9d9;
+    padding: 30px 0 0;
+    margin: 30px 0;
+}
