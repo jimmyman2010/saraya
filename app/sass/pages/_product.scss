@@ -1,0 +1,110 @@
+.search-product {
+    .row {
+        @include clearfix;
+        text-align: left;
+    }
+    .col{
+        @include tablet {
+            float: left;
+            padding: 15px;
+        }
+    }
+    .col-1{
+        @include tablet{
+            width: 33.33%;
+        }
+    }
+    .col-2{
+        @include tablet{
+            width: 66.66%;
+        }
+    }
+    label{
+        font-size: 14px;
+    }
+    input, select, button{
+        width: 100%;
+        padding: 0 20px;
+        height: 40px;
+        line-height: 1;
+        border: 1px solid #ccc;
+        font-family: $font-regular;
+        outline: none;
+        font-size: 16px;
+    }
+    button{
+        background: $color-green;
+        font-family: $font-bold;
+        color: white;
+        border: none;
+    }
+}
+
+.tags--market-segment{
+    margin-left: -3px;
+    margin-top: 15px;
+    a {
+        display: inline-block;
+        margin: 3px;
+        color: white;
+        background-color: $color-green;
+        text-decoration: none;
+        padding: 5px 10px;
+    }
+}
+
+.left-rail--product{
+    .module--widget_tag_cloud {
+        .module--title:before {
+            content: '\f1b3';
+        }
+    }
+    .dropdown-list-style{
+        .module--title:before {
+            content: '\f005';
+        }
+    }
+    .list-style{
+        .module--title:before {
+            content: '\f187';
+        }
+    }
+}
+
+.list-style{
+    font-size: 15px;
+    .tagcloud{
+        background: none;
+        padding: 0;
+    }
+    a{
+        font-size: 15px !important;
+        display: block;
+        padding: 10px 20px;
+        color: #3d4248;
+        margin: 0;
+        @include border-radius(0px);
+        border-top: 1px solid #eee;
+        &:first-child{
+            border-top: none;
+        }
+        &:hover{
+            background-color: #e5f3dc;
+            border-color: #e5f3dc;
+            + a{
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+.dropdown-list-style{
+    .tagcloud{
+        background: none;
+        padding: 0;
+    }
+    a{
+        font-size: 15px !important;
+        @include border-radius(0px);
+    }
+}

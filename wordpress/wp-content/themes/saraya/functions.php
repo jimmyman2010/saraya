@@ -138,6 +138,16 @@ function dickinsons_widgets_init() {
 		'before_title'  => '<h3 class="module--title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Product Sidebar', 'dickinsons' ),
+		'id'            => 'sidebar_product',
+		'description'   => __( 'Add widgets here to appear in your product sidebar.', 'dickinsons' ),
+		'before_widget' => '<div id="%1$s" class="module module--%2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="module--title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'dickinsons_widgets_init' );
 

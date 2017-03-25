@@ -24,6 +24,7 @@ function saraya_product() {
             'supports' => array(
                 'title',
                 'editor',
+                'thumbnail',
                 'excerpt'
             )
         )
@@ -73,6 +74,12 @@ function saraya_product_category() {
 }
 
 
+function saraya_market_segment(){
+    $marketSegments = get_the_terms(null, 'market_segment');
+    foreach ( $marketSegments as $item ) {
+        echo '<a style="background-color: ' . get_field('colour', $item) . '" href="' . get_term_link($item, 'market_segment') . '">' . $item->name . '</a>';
+    }
+}
 
 
 // Main function to get quotes

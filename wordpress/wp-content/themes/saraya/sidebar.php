@@ -11,8 +11,6 @@
 	<aside class="left-rail" role="complementary">
 		<?php dynamic_sidebar( 'sidebar' ); ?>
 
-		<?= get_option('our_products_' . ICL_LANGUAGE_CODE) ?>
-
 	</aside>
 <?php endif; ?>
 
