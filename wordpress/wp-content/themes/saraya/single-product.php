@@ -9,21 +9,13 @@
 get_header(); ?>
 
 <main class="site-main">
-	<div class="site-title <?= (has_post_format( 'image' ) && has_post_thumbnail()) ? 'has-background' : '' ?> child">
-		<div class="container">
-			<div class="title">
-				<h1>Our Blog</h1>
-				<h2>& Latest News</h2>
-				<?php if(has_post_format( 'image' ) && has_post_thumbnail()) {
-					echo get_the_post_thumbnail(NULL, 'banner');
-				} ?>
-
-			</div>
-		</div>
-	</div>
 	<div class="site-breadcrumb">
 		<div class="container">
-			<?php dickinsons_the_breadcrumbs(); ?>
+			<ul class="breadcrumbs">
+				<li><span class="divider">»</span><?php saraya_brand(); ?></li>
+				<li><span class="divider">»</span><?php saraya_product_type(); ?></li>
+				<li><span class="divider">»</span><?php the_title(); ?></li>
+			</ul>
 		</div>
 	</div>
 

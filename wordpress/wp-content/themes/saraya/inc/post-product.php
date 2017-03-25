@@ -82,8 +82,17 @@ function saraya_market_segment(){
 }
 
 function saraya_product_type(){
-    $marketSegments = get_the_terms(null, 'product_type');
-    foreach ( $marketSegments as $item ) {
+    $productTypes = get_the_terms(null, 'product_type');
+    if($productTypes && $productTypes[0]) {
+        $item = $productTypes[0];
+        echo '<a style="background-color: ' . get_field('colour', $item) . '" href="' . get_term_link($item, 'market_segment') . '">' . $item->name . '</a>';
+    }
+}
+
+function saraya_brand(){
+    $brands = get_the_terms(null, 'brand');
+    if($brands && $brands[0]) {
+        $item = $brands[0];
         echo '<a style="background-color: ' . get_field('colour', $item) . '" href="' . get_term_link($item, 'market_segment') . '">' . $item->name . '</a>';
     }
 }
