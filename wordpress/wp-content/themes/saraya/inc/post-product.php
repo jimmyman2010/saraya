@@ -20,7 +20,7 @@ function saraya_product() {
             'menu_icon' => 'dashicons-archive',
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'product'),
+            'rewrite' => array('slug' => 'products'),
             'supports' => array(
                 'title',
                 'editor',

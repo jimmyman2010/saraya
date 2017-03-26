@@ -34,7 +34,7 @@
             display: none;
         }
         @include tablet {
-            padding: 5px 0 5px 160px;
+            padding: 5px 0 5px 170px;
             position: relative;
             border-top: none;
         }
@@ -44,7 +44,7 @@
                 position: absolute;
                 left: 0;
                 top: 5px;
-                max-width: 150px;
+                max-width: 160px;
             }
         }
     }

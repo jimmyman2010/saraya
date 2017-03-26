@@ -311,4 +311,9 @@
     .panel-grid-cell{
         margin-bottom: 0;
     }
+    &[data-stretch-type="full-stretched"]{
+        .container{
+            max-width: none;
+        }
+    }
 }
