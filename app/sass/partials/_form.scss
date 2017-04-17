@@ -204,7 +204,9 @@
 .button--teal{
     background-color: $color-teal;
 }
-
+.button--red{
+    background-color: $color-red;
+}
 .button--gray{
     background-color: #eaeaea;
     color: black !important;
@@ -217,7 +219,7 @@
 }
 
 .button--where-to-buy{
-    background-color: #ff3737;
+    background-color: $color-red;
     &:before{
         content: '\f07a';
         margin-right: 10px;

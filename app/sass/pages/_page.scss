@@ -85,7 +85,7 @@
             }
             &:last-child{
                 display: none;
-                @include desktop{
+                @include tablet{
                     display: inline-block;
                 }
             }
@@ -107,6 +107,18 @@
 
 .home {
     .site-title, .site-breadcrumb{
+        display: none;
+    }
+    .main-container{
+        margin-top: 0;
+    }
+}
+
+.site-main--no-title{
+    .site-breadcrumb{
+        background-color: #e5f3dc;
+    }
+    .site-title{
         display: none;
     }
     .main-container{
