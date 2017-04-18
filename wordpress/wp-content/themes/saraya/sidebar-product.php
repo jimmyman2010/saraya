@@ -20,14 +20,14 @@
 				if($images['value'] && is_array($images['value'])){
 					echo '<div class="popup-gallery slide">';
 					foreach ($images['value'] as $index => $image) {
-						echo '<a href="' . $image['url'] . '" title="' . $image['title'] . '"><img src="' . $image['url'] . '" /></a>';
+						echo '<div class="popup-gallery-item" style="display: none;"><a href="' . $image['url'] . '" title="' . $image['title'] . '"><img src="' . $image['url'] . '" /></a></div>';
 					}
 					echo '</div>';
 
 
 					echo '<div class="gallery">';
 					foreach ($images['value'] as $index => $image) {
-						echo '<a href="' . $image['sizes']['medium'] . '" title="' . $image['title'] . '"><img src="' . $image['sizes']['medium'] . '" /></a>';
+						echo '<div class="gallery-item"><a href="javascript:void(0);" title="' . $image['title'] . '"><img src="' . $image['sizes']['thumb_footer'] . '" /></a></div>';
 					}
 					echo '</div>';
 				}
