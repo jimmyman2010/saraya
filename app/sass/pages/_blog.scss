@@ -459,6 +459,37 @@
             margin-bottom: 10px;
         }
     }
+    .panel{
+        padding: 15px;
+        @include border-radius(10px);
+        > *{
+            margin: 0 0 15px;
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+    .panel--green{
+        background-color: rgba($color-green, 0.3);
+    }
+    .panel--light-green{
+        background-color: rgba($color-light-green, 0.3);
+    }
+    .panel--orange{
+        background-color: rgba($color-orange, 0.3);
+    }
+    .panel--teal{
+        background-color: rgba($color-teal, 0.3);
+    }
+    .panel--blue{
+        background-color: rgba($color-blue, 0.3);
+    }
+    .panel--pink{
+        background-color: rgba($color-pink, 0.3);
+    }
+    .panel--red{
+        background-color: rgba($color-red, 0.3);
+    }
 }
 
 .bar{
