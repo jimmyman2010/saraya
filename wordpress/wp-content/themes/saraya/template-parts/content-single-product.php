@@ -12,9 +12,13 @@
 	<h2><?php saraya_product_type(); ?></h2>
 	<?php the_title( '<h1>', '</h1>' ); ?>
 	<div class="tags--market-segment"><?php saraya_market_segment(); ?></div>
-	<?php dickinsons_excerpt('', 5000, false) ?>
 </div>
 
+<br/>
+
+<div class="product-summary body">
+	<?php echo $tmp = get_field_object('summary')['value']; ?>
+</div>
 
 <div class="product-details body">
 	<h3>Product details</h3>
