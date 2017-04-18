@@ -17,7 +17,7 @@
 <br/>
 
 <div class="product-summary body">
-	<?php echo $tmp = get_field_object('summary')['value']; ?>
+	<?php echo get_field_object('summary')['value']; ?>
 </div>
 
 <div class="product-details body">
