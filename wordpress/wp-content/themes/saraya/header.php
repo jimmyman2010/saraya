@@ -37,7 +37,7 @@
 					<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
 					<div class="meta-info">
 						<div class="where-to-buy">
-							<a href="<?= get_option('where_to_buy_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--red"><i class="fa fa-shopping-cart"></i> &nbsp; <?= get_option('where_to_buy_' . ICL_LANGUAGE_CODE) ?></a>
+							<a href="<?= get_option('where_to_buy_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--red"><i class="fa fa-shopping-cart"></i> <?= get_option('where_to_buy_' . ICL_LANGUAGE_CODE) ?></a>
 						</div>
 						<div class="language">
 							<?php do_action('icl_language_selector'); ?>
