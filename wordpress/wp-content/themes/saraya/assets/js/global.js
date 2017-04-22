@@ -209,7 +209,7 @@ $(function(){
         var productImages = $('.product-images');
         if(productImages.length > 0) {
             var holder = $('.placeholder-desktop');
-            if (DKS.windowWidthHeight().width < 768) {
+            if (DKS.windowWidthHeight().width < 1024) {
                 holder = $('.placeholder-mobile');
             }
             holder.append(productImages);

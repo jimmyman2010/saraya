@@ -16,7 +16,7 @@
 
 .product-summary{
     margin-bottom: 20px;
-    @include tablet{
+    @include desktop{
         margin-bottom: 0;
     }
 }
@@ -65,7 +65,9 @@
 
 
 .product-images{
-
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     .popup-gallery{
         margin-bottom: 3px;
         .popup-gallery-item{
@@ -81,9 +83,9 @@
                 outline: none;
             }
             @include responsive(375){
-                height: 250px;
+                height: 260px;
             }
-            @include responsive(425){
+            @include responsive(400){
                 height: 300px;
             }
             @include tablet{
