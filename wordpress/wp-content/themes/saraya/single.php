@@ -32,7 +32,6 @@ get_header(); ?>
 		<header class="single-title">
 			<div class="container">
 				<div class="body">
-<!--					--><?php //the_secondary_title(null, '<h2>', '</h2>'); ?>
 					<?php  dickinsons_first_category(); ?>
 					<?php the_title( '<h1>', '</h1>' ); ?>
 				</div>
