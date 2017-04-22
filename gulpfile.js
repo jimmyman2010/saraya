@@ -22,7 +22,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('build', ['html-include', 'compass'], function(){
-    gulp.start(['fonts', 'images', 'svgmin', 'html']);
+    //gulp.start(['fonts', 'images', 'svgmin', 'html']);
+    gulp.start(['html']);
 });
 
 gulp.task('default', ['clean'], function(){

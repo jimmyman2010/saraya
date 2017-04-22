@@ -20,6 +20,8 @@
 	<?php echo get_field_object('summary')['value']; ?>
 </div>
 
+<div class="placeholder-mobile"></div>
+
 <div class="product-details body">
 	<h3>Product details</h3>
 	<ul>
