@@ -88,7 +88,7 @@
             @include responsive(400){
                 height: 300px;
             }
-            @include tablet{
+            @include desktop{
                 height: 200px;
             }
         }
