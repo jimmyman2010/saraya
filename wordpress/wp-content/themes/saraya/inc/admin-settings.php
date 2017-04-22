@@ -38,6 +38,8 @@ function footer_create_menu() {
 
 function register_dickinsons_settings() {
     //register header settings
+    register_setting( 'dickinsons-settings-header', 'product_page_en' );
+    register_setting( 'dickinsons-settings-header', 'product_page_vi' );
     register_setting( 'dickinsons-settings-header', 'slogan_en' );
     register_setting( 'dickinsons-settings-header', 'slogan_vi' );
     register_setting( 'dickinsons-settings-header', 'latest_news_en' );
@@ -111,6 +113,15 @@ function dickinsons_settings_page() {
                     </tr>
                 </thead>
                 <tbody>
+                    <tr valign="top" class="product-page">
+                        <th scope="row">Products page ID</th>
+                        <td>
+                            <input type="text" id="product_page_en" name="product_page_en" value="<?php echo trim( get_option('product_page_en') ); ?>"/>
+                        </td>
+                        <td>
+                            <input type="text" id="product_page_vi" name="product_page_vi" value="<?php echo trim( get_option('product_page_vi') ); ?>"/>
+                        </td>
+                    </tr>
                     <tr valign="top" class="slogan">
                         <th scope="row">Latest news</th>
                         <td>

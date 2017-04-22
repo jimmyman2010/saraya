@@ -2,7 +2,8 @@
     <div class="container">
         <div class="search-product">
 
-            <form>
+            <?php $id = get_option('product_page_' . ICL_LANGUAGE_CODE) ? intval(get_option('product_page_' . ICL_LANGUAGE_CODE)) : 335 ?>
+            <form action="<?= get_page_link($id); ?>">
                 <div class="row">
                     <div class="col col-1">
                         <label for="select--brand">BRAND</label>

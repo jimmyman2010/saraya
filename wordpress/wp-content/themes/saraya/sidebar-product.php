@@ -10,15 +10,17 @@
 <?php if ( is_active_sidebar( 'sidebar_product' )  ) : ?>
 	<aside class="left-rail left-rail--product" role="complementary">
 
+		<?php if(is_single()) { ?>
+
 		<div class="placeholder-desktop">
 			<div class="product-images">
 				<?php
 				// Start the loop.
-				while ( have_posts() ) : the_post();
+				while (have_posts()) : the_post();
 
 					$images = get_field_object('images');
 
-					if($images['value'] && is_array($images['value'])){
+					if ($images['value'] && is_array($images['value'])) {
 						echo '<div class="popup-gallery gallery-slide">';
 						foreach ($images['value'] as $index => $image) {
 							echo '<div class="popup-gallery-item" style="display: none;"><a href="' . $image['url'] . '" title="' . get_the_title() . '"><img src="' . $image['url'] . '" alt="" /></a></div>';
@@ -35,10 +37,13 @@
 
 					// End of the loop.
 				endwhile;
+
 				?>
 
 			</div>
 		</div>
+
+		<?php } ?>
 
 		<?php dynamic_sidebar( 'sidebar_product' ); ?>
 
