@@ -20,7 +20,7 @@ function saraya_product() {
             'menu_icon' => 'dashicons-archive',
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'products'),
+            'rewrite' => array('slug' => 'product'),
             'supports' => array(
                 'title',
                 'editor',
@@ -72,6 +72,15 @@ function saraya_product_category() {
         )
     );
 }
+
+function add_query_vars_filter( $vars ){
+    $vars[] = "pb";
+    $vars[] = "ms";
+    $vars[] = "pt";
+    $vars[] = "pn";
+    return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
 function saraya_market_segment(){

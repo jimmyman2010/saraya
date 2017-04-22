@@ -21,22 +21,54 @@
     }
     label{
         font-size: 14px;
+        padding: 20px 0 5px;
+        display: block;
+        @include tablet{
+            padding: 0;
+        }
     }
     input, select, button{
         width: 100%;
-        padding: 0 20px;
+        padding: 0 10px;
         height: 40px;
         line-height: 1;
         border: 1px solid #ccc;
         font-family: $font-regular;
         outline: none;
         font-size: 16px;
+        @include tablet{
+            padding: 0 20px;
+        }
     }
     button{
         background: $color-green;
         font-family: $font-bold;
         color: white;
         border: none;
+        cursor: pointer;
+    }
+}
+
+.product-list{
+    .search-area .container{
+        padding: 5px 16px 25px;
+        @include tablet{
+            padding: 20px 0;
+        }
+        @include desktop{
+            padding: 27px 0;
+        }
+    }
+    .label-name{
+        @include tablet {
+            display: none;
+        }
+    }
+    .label-search{
+        height: 0;
+        @include tablet {
+            display: none;
+        }
     }
 }
 

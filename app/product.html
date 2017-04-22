@@ -31,7 +31,7 @@
         </div>
 
 
-        <main class="site-main">
+        <main class="site-main product-list">
             <div class="site-title child" style="background-color: transparent;">
                 <div class="container">
                     <div class="title">
@@ -40,42 +40,43 @@
                     </div>
                 </div>
             </div>
-            <div class="site-title child">
+            <div class="site-title child search-area">
                 <div class="container">
                     <div class="search-product">
-                        <div class="row">
-                            <div class="col col-1">
-                                <label for="select--brand">BRAND</label>
-                                <select id="select--brand">
-                                    <option>Saraya</option>
-                                    <option>Saraya</option>
-                                </select>
+
+                        <form>
+                            <div class="row">
+                                <div class="col col-1">
+                                    <label for="select--brand">BRAND</label>
+                                    <select id="select--brand" name="pb">
+                                        <option value="">-- Brand --</option>
+                                        <option selected="selected" value="27">Saraya</option><option value="32">Saraya 1</option>                        </select>
+
+                                </div>
+                                <div class="col col-1">
+                                    <label for="select--market-segment">MARKET SEGMENT</label>
+                                    <select id="select--market-segment" name="ms">
+                                        <option value="">-- Market segment --</option>
+                                        <option value="29">Food Sanitation</option><option selected="selected" value="33">Market 2</option><option value="34">Market 3</option><option value="30">Public Health and Hygiene</option>                        </select>
+                                </div>
+                                <div class="col col-1">
+                                    <label for="select--type">PRODUCT TYPE</label>
+                                    <select id="select--type" name="pt">
+                                        <option value="">-- Type --</option>
+                                        <option value="31">Face Care</option><option selected="selected" value="28">Hand Care</option>                        </select>
+                                </div>
                             </div>
-                            <div class="col col-1">
-                                <label for="select--market-segment">MARKET SEGMENT</label>
-                                <select id="select--market-segment">
-                                    <option>Saraya</option>
-                                    <option>Saraya</option>
-                                    <option>Saraya</option>
-                                </select>
+                            <div class="row">
+                                <div class="col col-2">
+                                    <label class="label-name" for="name">SEARCH BY NAME</label>
+                                    <input type="text" id="name" placeholder="Search by name" name="pn" value="">
+                                </div>
+                                <div class="col col-1">
+                                    <label class="label-search">&nbsp;</label>
+                                    <button type="submit">Search</button>
+                                </div>
                             </div>
-                            <div class="col col-1">
-                                <label for="select--type">PRODUCT TYPE</label>
-                                <select id="select--type">
-                                    <option>Saraya</option>
-                                    <option>Saraya</option>
-                                    <option>Saraya</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-2">
-                                <input type="text" placeholder="Search by name">
-                            </div>
-                            <div class="col col-1">
-                                <button type="submit">Search</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
