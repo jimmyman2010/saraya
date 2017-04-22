@@ -39,6 +39,8 @@ get_header(); ?>
 					<span class="tags"><?php dickinsons_entry_tag(false); ?></span><span class="separate">|</span><?php dickinsons_entry_date(); ?>
 				</div>
 			</div>
+
+			<?php if ( has_excerpt() ) { ?>
 			<div class="excerpt">
 				<div class="container">
 					<div class="body">
@@ -46,6 +48,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
+			<?php } ?>
 		</header>
 
 		<div class="container clearfix">
