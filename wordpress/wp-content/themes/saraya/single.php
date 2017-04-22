@@ -32,7 +32,8 @@ get_header(); ?>
 		<header class="single-title">
 			<div class="container">
 				<div class="body">
-					<?php the_secondary_title(null, '<h2>', '</h2>'); ?>
+<!--					--><?php //the_secondary_title(null, '<h2>', '</h2>'); ?>
+					<?php  dickinsons_first_category(); ?>
 					<?php the_title( '<h1>', '</h1>' ); ?>
 				</div>
 				<div class="meta">
@@ -42,7 +43,7 @@ get_header(); ?>
 			<div class="excerpt">
 				<div class="container">
 					<div class="body">
-						<?php dickinsons_excerpt('', 50) ?>
+						<?php the_excerpt(); ?>
 					</div>
 				</div>
 			</div>

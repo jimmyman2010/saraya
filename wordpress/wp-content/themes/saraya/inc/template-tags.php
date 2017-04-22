@@ -162,6 +162,25 @@ if ( ! function_exists( 'dickinsons_entry_category' ) ) :
 	}
 endif;
 
+
+if ( ! function_exists( 'dickinsons_first_category' ) ) :
+	/**
+	 * Prints HTML with category and tags for current post.
+	 *
+	 * Create your own dickinsons_first_category() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function dickinsons_first_category() {
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
+		if ( $categories_list && dickinsons_categorized_blog() ) {
+
+			printf('<h2>%1$s</h2>', $categories_list);
+		}
+	}
+endif;
+
+
 if ( ! function_exists( 'dickinsons_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
