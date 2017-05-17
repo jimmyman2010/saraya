@@ -44,6 +44,19 @@ h1, h2, h3, h4, h5, h6, b, strong{
     }
 }
 
+.desktop{
+    display: none;
+    @include tablet{
+        display: block;
+    }
+}
+
+.mobile{
+    @include tablet{
+        display: none;
+    }
+}
+
 /* partials */
 @import "partials/rail_menu";
 @import "partials/header";

@@ -17,8 +17,8 @@ get_header(); ?>
 	<div class="site-title child" style="background-color: transparent;">
 		<div class="container">
 			<div class="title">
-				<h1>Our product</h1>
-				<h2>Choose the filter below to search the catalogue of our products</h2>
+				<h1><?= get_option('product_title_' . ICL_LANGUAGE_CODE) ?></h1>
+				<h2><?= get_option('product_subtitle_' . ICL_LANGUAGE_CODE) ?></h2>
 			</div>
 		</div>
 	</div>

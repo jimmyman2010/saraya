@@ -233,14 +233,14 @@ if ( ! function_exists( 'dickinsons_excerpt' ) ) :
 			<div class="<?php echo $class; ?>">
 				<?php  echo wp_trim_words( get_the_excerpt(), $limit, '...' ); ?>
 				<?php if($show_read_more) { ?>
-					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button"><?= get_option('product_readmore_' . ICL_LANGUAGE_CODE) ?></a></p>
 				<?php } ?>
 			</div>
 		<?php } else { ?>
 			<div class="<?php echo $class; ?>">
 				<?php echo wp_trim_words( get_the_content(), $limit, '...' ); ?>
 				<?php if($show_read_more) { ?>
-					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button"><?= get_option('product_readmore_' . ICL_LANGUAGE_CODE) ?></a></p>
 				<?php } ?>
 			</div>
 		<?php }

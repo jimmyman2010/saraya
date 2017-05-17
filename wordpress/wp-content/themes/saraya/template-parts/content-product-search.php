@@ -6,9 +6,9 @@
             <form action="<?= get_page_link($id); ?>">
                 <div class="row">
                     <div class="col col-1">
-                        <label for="select--brand">BRAND</label>
+                        <label for="select--brand"><?= get_option('product_brand_' . ICL_LANGUAGE_CODE) ?></label>
                         <select id="select--brand" name="pb">
-                            <option value="">-- Brand --</option>
+                            <option value="">-- <?= get_option('product_brand_' . ICL_LANGUAGE_CODE) ?> --</option>
                             <?php
                             $terms = get_terms( array(
                                 'taxonomy' => 'brand',
@@ -29,9 +29,9 @@
 
                     </div>
                     <div class="col col-1">
-                        <label for="select--market-segment">MARKET SEGMENT</label>
+                        <label for="select--market-segment"><?= get_option('product_market_' . ICL_LANGUAGE_CODE) ?></label>
                         <select id="select--market-segment" name="ms">
-                            <option value="">-- Market segment --</option>
+                            <option value="">-- <?= get_option('product_market_' . ICL_LANGUAGE_CODE) ?> --</option>
                             <?php
                             $terms = get_terms( array(
                                 'taxonomy' => 'market_segment',
@@ -51,9 +51,9 @@
                         </select>
                     </div>
                     <div class="col col-1">
-                        <label for="select--type">PRODUCT TYPE</label>
+                        <label for="select--type"><?= get_option('product_type_' . ICL_LANGUAGE_CODE) ?></label>
                         <select id="select--type" name="pt">
-                            <option value="">-- Type --</option>
+                            <option value="">-- <?= get_option('product_type_' . ICL_LANGUAGE_CODE) ?> --</option>
                             <?php
                             $terms = get_terms( array(
                                 'taxonomy' => 'product_type',
@@ -75,12 +75,12 @@
                 </div>
                 <div class="row">
                     <div class="col col-2">
-                        <label class="label-name" for="name">SEARCH BY NAME</label>
-                        <input type="text" id="name" placeholder="Search by name" name="pn" value="<?php echo get_query_var( 'pn' ); ?>">
+                        <label class="label-name" for="name"><?= strtoupper(get_option('product_byname_' . ICL_LANGUAGE_CODE)) ?></label>
+                        <input type="text" id="name" placeholder="<?= get_option('product_byname_' . ICL_LANGUAGE_CODE) ?>" name="pn" value="<?php echo get_query_var( 'pn' ); ?>">
                     </div>
                     <div class="col col-1">
                         <label class="label-search">&nbsp;</label>
-                        <button type="submit">Search</button>
+                        <button type="submit"><?= get_option('product_search_' . ICL_LANGUAGE_CODE) ?></button>
                     </div>
                 </div>
             </form>

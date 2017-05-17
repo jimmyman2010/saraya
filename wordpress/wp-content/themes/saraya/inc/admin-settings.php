@@ -51,6 +51,24 @@ function register_dickinsons_settings() {
     register_setting( 'dickinsons-settings-header', 'where_to_buy_link_en' );
     register_setting( 'dickinsons-settings-header', 'where_to_buy_link_vi' );
 
+    //dickinsons-settings-product
+    register_setting( 'dickinsons-settings-product', 'product_title_en' );
+    register_setting( 'dickinsons-settings-product', 'product_title_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_subtitle_en' );
+    register_setting( 'dickinsons-settings-product', 'product_subtitle_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_brand_en' );
+    register_setting( 'dickinsons-settings-product', 'product_brand_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_market_en' );
+    register_setting( 'dickinsons-settings-product', 'product_market_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_type_en' );
+    register_setting( 'dickinsons-settings-product', 'product_type_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_byname_en' );
+    register_setting( 'dickinsons-settings-product', 'product_byname_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_search_en' );
+    register_setting( 'dickinsons-settings-product', 'product_search_vi' );
+    register_setting( 'dickinsons-settings-product', 'product_readmore_en' );
+    register_setting( 'dickinsons-settings-product', 'product_readmore_vi' );
+
     //register subscribe settings
     register_setting( 'dickinsons-settings-subscribe', 'subscribe_en' );
     register_setting( 'dickinsons-settings-subscribe', 'subscribe_vi' );
@@ -175,6 +193,106 @@ function dickinsons_settings_page() {
         </form>
 
         <hr>
+
+        <h2>Product</h2>
+        <form method="post" action="options.php">
+            <?php settings_fields( 'dickinsons-settings-product' ); ?>
+            <?php do_settings_sections( 'dickinsons-settings-product' ); ?>
+            <table class="form-table my-settings">
+                <colgroup>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>English</th>
+                    <th>Vietnamese</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Product title</th>
+                    <td>
+                        <input type="text" name="product_title_en" value="<?php echo trim( get_option('product_title_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_title_vi" value="<?php echo trim( get_option('product_title_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Product subtitle</th>
+                    <td>
+                        <input type="text" name="product_subtitle_en" value="<?php echo trim( get_option('product_subtitle_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_subtitle_vi" value="<?php echo trim( get_option('product_subtitle_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Brand</th>
+                    <td>
+                        <input type="text" name="product_brand_en" value="<?php echo trim( get_option('product_brand_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_brand_vi" value="<?php echo trim( get_option('product_brand_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Market Segment</th>
+                    <td>
+                        <input type="text" name="product_market_en" value="<?php echo trim( get_option('product_market_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_market_vi" value="<?php echo trim( get_option('product_market_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Product type</th>
+                    <td>
+                        <input type="text" name="product_type_en" value="<?php echo trim( get_option('product_type_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_type_vi" value="<?php echo trim( get_option('product_type_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Search by name</th>
+                    <td>
+                        <input type="text" name="product_byname_en" value="<?php echo trim( get_option('product_byname_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_byname_vi" value="<?php echo trim( get_option('product_byname_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Search</th>
+                    <td>
+                        <input type="text" name="product_search_en" value="<?php echo trim( get_option('product_search_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_search_vi" value="<?php echo trim( get_option('product_search_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Read more</th>
+                    <td>
+                        <input type="text" name="product_readmore_en" value="<?php echo trim( get_option('product_readmore_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="product_readmore_vi" value="<?php echo trim( get_option('product_readmore_vi') ); ?>" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <?php submit_button(); ?>
+
+        </form>
+
+        <hr>
+
         <h2>Subscribe</h2>
         <form method="post" action="options.php">
             <?php settings_fields( 'dickinsons-settings-subscribe' ); ?>
