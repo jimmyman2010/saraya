@@ -127,7 +127,7 @@ var DKS = (function(){
                         $($(this).data('target')).addClass('active');
 
                         $('html, body').animate({
-                            scrollTop: siteHistory.offset().top
+                            scrollTop: siteHistory.offset().top + 100
                         }, 500);
                     }
                 });
