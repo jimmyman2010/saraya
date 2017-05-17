@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Widgets Bundle
 Description: A collection of all widgets, neatly bundled into a single plugin. It's also a framework to code your own widgets on top of.
-Version: 1.8.2
+Version: 1.8.6
 Text Domain: so-widgets-bundle
 Domain Path: /languages
 Author: SiteOrigin

@@ -12,7 +12,7 @@
 	<div class="details">
 		<?php if(has_post_thumbnail()) : ?>
 			<figure>
-				<?php dickinsons_post_thumbnail(); ?>
+				<?php dickinsons_post_thumbnail('full'); ?>
 			</figure>
 		<?php endif; ?>
 		<div class="description">
