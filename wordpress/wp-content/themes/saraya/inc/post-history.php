@@ -42,17 +42,17 @@ function get_all_history() {
     foreach($query->posts as $index => $post) {
         // Build output string
         if($index === 0) {
-            $titles .= '<li class="active"><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $titles .= '<li class="active"><a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
             $contents .= '<li class="tab-item-' . $index . ' active">
-                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
                             <div class="body">
                                 ' . nl2p($post->post_content) . '
                             </div>
                         </li>';
         } else {
-            $titles .= '<li><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $titles .= '<li><a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
             $contents .= '<li class="tab-item-' . $index . '">
-                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
                             <div class="body">
                                 ' . nl2p($post->post_content) . '
                             </div>
