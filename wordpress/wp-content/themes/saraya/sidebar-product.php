@@ -27,10 +27,17 @@
 						}
 						echo '</div>';
 
-
+						$n = 0;
+						$str = '';
 						echo '<div class="gallery-nav">';
 						foreach ($images['value'] as $index => $image) {
-							echo '<div class="gallery-item"><a href="javascript:void(0);" data-slick="' . $index . '" title="' . get_the_title() . '"><img src="' . $image['sizes']['thumb_menu'] . '" alt="" /></a></div>';
+							$n++;
+							$str = '<img src="' . $image['sizes']['thumb_menu'] . '" alt="" style="opacity: 0;" />';
+							echo '<div class="gallery-item"><a href="javascript:void(0);" data-slick="' . $index . '" title="' . get_the_title() . '"><img src="' . $image['sizes']['thumb_menu'] . '" alt="" /></a></div>';;
+						}
+						while($n < 3){
+							echo '<div class="gallery-item"><a href="javascript:void(0);" style="cursor: default;">' . $str . '</a></div>';
+							$n++;
 						}
 						echo '</div>';
 					}

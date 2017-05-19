@@ -44,16 +44,21 @@ h1, h2, h3, h4, h5, h6, b, strong{
     }
 }
 
+
 .desktop{
-    display: none;
+    display: none !important;
+    padding: 0 !important;
+
     @include tablet{
-        display: block;
+        display: block !important;
     }
 }
 
 .mobile{
+    display: block !important;
+    padding: 0 !important;
     @include tablet{
-        display: none;
+        display: none !important;
     }
 }
 
