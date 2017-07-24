@@ -114,3 +114,18 @@
         }
     }
 }
+
+.lang-vi {
+    .product-details{
+        li{
+            @include tablet {
+                padding-left: 190px;
+            }
+            strong{
+                @include tablet {
+                    max-width: 180px;
+                }
+            }
+        }
+    }
+}

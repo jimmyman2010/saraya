@@ -23,7 +23,11 @@
 <div class="placeholder-mobile"></div>
 
 <div class="product-details body">
-	<h3>Product details</h3>
+    <?php if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE === 'en') { ?>
+	    <h3>Product details</h3>
+    <?php } else { ?>
+        <h3>Chi tiết sản phẩm</h3>
+    <?php } ?>
 	<ul>
 		<?php $details = [
 			'available_in',
