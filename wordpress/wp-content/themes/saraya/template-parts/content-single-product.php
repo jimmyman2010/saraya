@@ -40,7 +40,11 @@
 		foreach($details as $detail) {
 			$tmp = get_field_object($detail);
 			if ($tmp && $tmp['value']) {
-				echo '<li><strong>' . $tmp['label'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+			    if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE === 'en') {
+                    echo '<li><strong>' . $tmp['label'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+                } else {
+                    echo '<li><strong>' . $tmp['instructions'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+                }
 			}
 		}?>
 	</ul>
