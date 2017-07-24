@@ -17,8 +17,10 @@
 <br/>
 
 <div class="product-summary body">
-	<?php echo get_field_object('summary')['value']; ?>
+	<?php the_content(); ?>
 </div>
+
+<div class="placeholder-mobile"></div>
 
 <div class="product-details body">
 	<h3>Product details</h3>
@@ -51,7 +53,7 @@
 </div>
 
 <div class="body">
-	<?php the_content(); ?>
+	<?php echo get_field_object('summary')['value']; ?>
 </div>
 
 <div class="extra-link body">

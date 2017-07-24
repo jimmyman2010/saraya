@@ -121,13 +121,16 @@ var DKS = (function(){
             var siteHistory = $('.site-history');
             if(siteHistory.length > 0){
                 siteHistory.on('click', '.toggle', function(){
-                    if(!$(this).parent().hasClass('active')) {
+                    var that = $(this);
+                    if(!that.parent().hasClass('active')) {
                         siteHistory.find('.active').removeClass('active');
-                        $(this).parent().addClass('active');
-                        $($(this).data('target')).addClass('active');
+                        that.parent().addClass('active');
+                        $(that.data('target')).addClass('active');
 
-                        $('html, body').animate({
-                            scrollTop: siteHistory.offset().top
+                        setTimeout(function(){
+                            $('html, body').animate({
+                                scrollTop: that.offset().top - 150
+                            }, 500);
                         }, 500);
                     }
                 });
@@ -135,7 +138,6 @@ var DKS = (function(){
             }
         },
         init: function () {
-            method.windowWidthHeight();
             method.fullImage();
             method.menuToggle();
             method.menuHover();
@@ -146,6 +148,7 @@ var DKS = (function(){
     };
     return {
         init: method.init,
+        windowWidthHeight: method.windowWidthHeight,
         showNoticePopup: method.showNoticePopup
     }
 })();
@@ -179,6 +182,13 @@ $(function(){
 
     var popupGallery = $('.popup-gallery');
     if(popupGallery.length > 0) {
+        popupGallery.find('.popup-gallery-item').show();
+        popupGallery.slick();
+
+        $('.gallery-nav a').on('click', function(){
+            popupGallery.slick('slickGoTo', parseInt($(this).data('slick'), 10));
+        });
+
         popupGallery.magnificPopup({
             delegate: 'a',
             type: 'image',
@@ -197,6 +207,17 @@ $(function(){
             }
         });
     }
+
+    $(window).on('load resize', function () {
+        var productImages = $('.product-images');
+        if(productImages.length > 0) {
+            var holder = $('.placeholder-desktop');
+            if (DKS.windowWidthHeight().width < 1024) {
+                holder = $('.placeholder-mobile');
+            }
+            holder.append(productImages);
+        }
+    });
 
     DKS.init();
 });

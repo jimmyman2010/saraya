@@ -20,7 +20,7 @@ function saraya_product() {
             'menu_icon' => 'dashicons-archive',
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'products'),
+            'rewrite' => array('slug' => 'product'),
             'supports' => array(
                 'title',
                 'editor',
@@ -73,6 +73,15 @@ function saraya_product_category() {
     );
 }
 
+function add_query_vars_filter( $vars ){
+    $vars[] = "pb";
+    $vars[] = "ms";
+    $vars[] = "pt";
+    $vars[] = "pn";
+    return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
 
 function saraya_market_segment(){
     $marketSegments = get_the_terms(null, 'market_segment');
@@ -115,17 +124,17 @@ function get_all_product() {
     foreach($query->posts as $index => $post) {
         // Build output string
         if($index === 0) {
-            $titles .= '<li class="active"><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $titles .= '<li class="active"><a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
             $contents .= '<li class="tab-item-' . $index . ' active">
-                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
                             <div class="body">
                                 ' . nl2p($post->post_content) . '
                             </div>
                         </li>';
         } else {
-            $titles .= '<li><a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
+            $titles .= '<li><a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a></li>';
             $contents .= '<li class="tab-item-' . $index . '">
-                            <a class="toggle" href="javascipt:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
+                            <a class="toggle" href="javascript:void(0);" data-target=".tab-item-' . $index . '">' . $post->post_title . '</a>
                             <div class="body">
                                 ' . nl2p($post->post_content) . '
                             </div>

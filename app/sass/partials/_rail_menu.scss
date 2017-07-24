@@ -23,7 +23,7 @@
 }
 
 .site-rail-menu--open{
-    padding-right: 100vw;
+    padding-right: 94vw;
     @include tablet{
         padding-right: 460px;
     }
@@ -63,7 +63,7 @@
 .site-rail-menu{
     background-color: #4a4a4a;
     color: whitesmoke;
-    padding: 60px 15px 20px 20px;
+    padding: 60px 0 20px 30px;
     height: 100vh;
     width: 100vw;
 

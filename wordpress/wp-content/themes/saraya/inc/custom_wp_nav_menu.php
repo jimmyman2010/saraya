@@ -44,7 +44,7 @@ function clean_custom_menu_details($menu_items, $menu_item_parent){
             $str .= '<li>
                         <h4>' . $menu_item->title . '</h4>
                         <figure>
-                            <a href="' . $menu_item->url . '">' . get_the_post_thumbnail(intval($menu_item->object_id), 'thumb_menu') . '
+                            <a href="' . $menu_item->url . '">' . get_the_post_thumbnail(intval($menu_item->object_id), 'full') . '
                             </a>
                         </figure>
                     </li>';

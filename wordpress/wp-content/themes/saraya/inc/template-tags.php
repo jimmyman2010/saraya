@@ -162,6 +162,25 @@ if ( ! function_exists( 'dickinsons_entry_category' ) ) :
 	}
 endif;
 
+
+if ( ! function_exists( 'dickinsons_first_category' ) ) :
+	/**
+	 * Prints HTML with category and tags for current post.
+	 *
+	 * Create your own dickinsons_first_category() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function dickinsons_first_category() {
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
+		if ( $categories_list && dickinsons_categorized_blog() ) {
+
+			printf('<h2>%1$s</h2>', $categories_list);
+		}
+	}
+endif;
+
+
 if ( ! function_exists( 'dickinsons_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
@@ -170,10 +189,10 @@ if ( ! function_exists( 'dickinsons_post_thumbnail' ) ) :
  * element when on single views.
  *
  * Create your own dickinsons_post_thumbnail() function to override in a child theme.
- *
+ * @param $size string
  * @since Twenty Sixteen 1.0
  */
-function dickinsons_post_thumbnail() {
+function dickinsons_post_thumbnail($size) {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -182,13 +201,13 @@ function dickinsons_post_thumbnail() {
 	?>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail($size ? $size : 'post-thumbnail'); ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+		<?php the_post_thumbnail( $size ? $size : 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 
 	<?php endif; // End is_singular()
@@ -214,14 +233,14 @@ if ( ! function_exists( 'dickinsons_excerpt' ) ) :
 			<div class="<?php echo $class; ?>">
 				<?php  echo wp_trim_words( get_the_excerpt(), $limit, '...' ); ?>
 				<?php if($show_read_more) { ?>
-					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button"><?= get_option('product_readmore_' . ICL_LANGUAGE_CODE) ?></a></p>
 				<?php } ?>
 			</div>
 		<?php } else { ?>
 			<div class="<?php echo $class; ?>">
 				<?php echo wp_trim_words( get_the_content(), $limit, '...' ); ?>
 				<?php if($show_read_more) { ?>
-					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button">Read more</a></p>
+					<p class="more"><a href="<?= esc_url( get_permalink() ) ?>" class="button"><?= get_option('product_readmore_' . ICL_LANGUAGE_CODE) ?></a></p>
 				<?php } ?>
 			</div>
 		<?php }
