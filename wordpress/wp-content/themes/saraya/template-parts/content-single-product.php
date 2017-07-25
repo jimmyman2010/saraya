@@ -7,6 +7,7 @@
  */
 ?>
 
+<div class="placeholder-mobile"></div>
 
 <div class="product-title body">
 	<h2><?php saraya_product_type(); ?></h2>
@@ -19,8 +20,6 @@
 <div class="product-summary body">
 	<?php the_content(); ?>
 </div>
-
-<div class="placeholder-mobile"></div>
 
 <div class="product-details body">
     <?php if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE === 'en') { ?>
