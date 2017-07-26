@@ -217,6 +217,15 @@ $(function(){
             }
             holder.append(productImages);
         }
+
+        $('.item-product figure').each(function(){
+            if($(window).width() >= 768) {
+                var minHeight = $(this).height();
+                $(this).parent().css('min-height', minHeight);
+            } else {
+                $(this).parent().removeAttr('style');
+            }
+        });
     });
 
     DKS.init();

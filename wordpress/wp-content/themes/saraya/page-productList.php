@@ -37,7 +37,7 @@ get_header(); ?>
 			<section class="blog-content" role="main">
 
 				<?php
-
+                $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
 				$args = array(
 					'post_type' => 'product'
 				);
@@ -90,7 +90,15 @@ get_header(); ?>
 				}
 
 				// The Query
-				$the_query = new WP_Query( $args );
+                $the_total = new WP_Query( $args );
+				$postPerPage = 5;
+                $the_query = new WP_Query(
+                        array_merge($args,
+                            [
+                                'posts_per_page' => $postPerPage,
+                                'paged' => $paged
+                            ] )
+                );
 
 				// The Loop
 				if ( $the_query->have_posts() ) {
@@ -98,8 +106,35 @@ get_header(); ?>
 						$the_query->the_post();
 						get_template_part( 'template-parts/content-product', get_post_format() );
 					}
-					get_template_part( 'template-parts/content', 'pagination' );
+					$prev = 'PREVIOUS';
+					$next = 'NEXT';
+					$url = '/products/';
+					if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE !== 'en'){
+                        $prev = 'TRƯỚC';
+                        $next = 'SAU';
+                        $url = '/cac-san-pham/';
+                    }
+                    global $wp;
+                    $current_url = home_url() . $url;
 
+                    echo '<div class="pagination">';
+                    $total_page = ceil(count($the_total->posts)/$postPerPage);
+                    if($paged > 1) {
+                        echo '<a class="prev page-numbers" href="' . $current_url . ($paged - 1) . '/"><i class="fa fa-angle-left"></i> ' . $prev . '</a>';
+                    }
+                    for($i = 1; $i <= $total_page; $i++){
+                        if($i === $paged) {
+                            echo '<span class="current page-numbers">' . $i . '</span>';
+                        } else {
+                            echo '<a class="page-numbers" href="' . $current_url . $i . '/">' . $i . '</a>';
+                        }
+                    }
+                    if($paged < $total_page) {
+                        echo '<a class="next page-numbers" href="' . $current_url . ($paged + 1) . '/">' . $next . ' <i class="fa fa-angle-right"></i></a>';
+                    }
+                    echo '</div>';
+
+//					get_template_part( 'template-parts/content', 'pagination' );
 				} else {
 					// no posts found
 					get_template_part( 'template-parts/content', 'none' );

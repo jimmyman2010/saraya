@@ -385,4 +385,3 @@ function dickinsons_limit_text($text, $limit) {
 	}
 	return $text;
 }
-
