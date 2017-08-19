@@ -7,6 +7,7 @@
  */
 ?>
 
+<div class="placeholder-mobile"></div>
 
 <div class="product-title body">
 	<h2><?php saraya_product_type(); ?></h2>
@@ -20,10 +21,12 @@
 	<?php the_content(); ?>
 </div>
 
-<div class="placeholder-mobile"></div>
-
 <div class="product-details body">
-	<h3>Product details</h3>
+    <?php if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE === 'en') { ?>
+	    <h3>Product details</h3>
+    <?php } else { ?>
+        <h3>Chi tiết sản phẩm</h3>
+    <?php } ?>
 	<ul>
 		<?php $details = [
 			'available_in',
@@ -42,7 +45,11 @@
 		foreach($details as $detail) {
 			$tmp = get_field_object($detail);
 			if ($tmp && $tmp['value']) {
-				echo '<li><strong>' . $tmp['label'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+			    if(ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE === 'en') {
+                    echo '<li><strong>' . $tmp['label'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+                } else {
+                    echo '<li><strong>' . $tmp['instructions'] . ':</strong><span>' . $tmp['value'] . '</span></li>';
+                }
 			}
 		}?>
 	</ul>
